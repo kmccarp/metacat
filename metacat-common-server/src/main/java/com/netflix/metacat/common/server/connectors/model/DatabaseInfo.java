@@ -35,6 +35,7 @@ import java.util.Map;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public final class DatabaseInfo extends BaseInfo {
+    private static final long serialVersionUID = 1;
     /* location of the database */
     private String uri;
 

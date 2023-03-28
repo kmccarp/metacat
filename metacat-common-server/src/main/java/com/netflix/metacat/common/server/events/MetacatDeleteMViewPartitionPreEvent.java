@@ -35,6 +35,8 @@ import javax.annotation.Nonnull;
 @ToString(callSuper = true)
 public class MetacatDeleteMViewPartitionPreEvent extends MetacatEvent {
 
+    private static final long serialVersionUID = 1;
+
     private final PartitionsSaveRequestDto saveRequest;
 
     /**

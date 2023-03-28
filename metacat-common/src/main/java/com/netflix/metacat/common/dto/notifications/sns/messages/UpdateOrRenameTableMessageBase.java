@@ -37,6 +37,8 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public abstract class UpdateOrRenameTableMessageBase extends SNSMessage<UpdatePayload<TableDto>> {
 
+    private static final long serialVersionUID = 1;
+
     /**
      * Ctor for this base class.
      *

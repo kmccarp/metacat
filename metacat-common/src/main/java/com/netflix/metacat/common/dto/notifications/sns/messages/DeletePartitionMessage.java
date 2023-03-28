@@ -36,6 +36,8 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class DeletePartitionMessage extends SNSMessage<String> {
 
+    private static final long serialVersionUID = 1;
+
     /**
      * Create a new DeletePartitionMessage.
      *

@@ -24,6 +24,7 @@ import java.util.List;
  * Partition save response.
  */
 public class PartitionsSaveResponseDto extends BaseDto {
+    private static final long serialVersionUID = 1;
     /**
      * List of added partition names.
      */

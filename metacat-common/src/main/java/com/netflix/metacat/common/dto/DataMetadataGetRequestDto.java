@@ -26,5 +26,6 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class DataMetadataGetRequestDto extends BaseDto {
+    private static final long serialVersionUID = 1;
     private String uri;
 }

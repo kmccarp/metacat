@@ -37,6 +37,8 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class UpdateTableMessage extends UpdateOrRenameTableMessageBase {
 
+    private static final long serialVersionUID = 1;
+
     /**
      * Create a new UpdateTableMessage.
      *

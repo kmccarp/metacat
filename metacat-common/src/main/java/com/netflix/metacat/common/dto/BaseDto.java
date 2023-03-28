@@ -35,6 +35,7 @@ import java.io.Serializable;
  */
 //TODO: All DTO's should be READ-ONLY
 public abstract class BaseDto implements Serializable {
+    private static final long serialVersionUID = 1;
     protected static final MetacatJsonLocator METACAT_JSON_LOCATOR = new MetacatJsonLocator();
     /**
      * Deserialize the input stream.
