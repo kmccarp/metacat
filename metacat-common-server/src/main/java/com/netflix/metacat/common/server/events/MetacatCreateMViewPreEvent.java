@@ -35,6 +35,8 @@ import javax.annotation.Nullable;
 @ToString(callSuper = true)
 public class MetacatCreateMViewPreEvent extends MetacatEvent {
 
+    private static final long serialVersionUID = 1;
+
     private final String filter;
     private final Boolean snapshot;
 

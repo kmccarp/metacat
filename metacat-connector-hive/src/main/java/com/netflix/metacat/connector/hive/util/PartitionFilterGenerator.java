@@ -52,7 +52,7 @@ import java.util.Map;
 public class PartitionFilterGenerator extends PartitionParserEval {
     private final Map<String, PartitionCol> partitionColumns;
     private final List<Object> params;
-    private List<String> partVals;
+    private final List<String> partVals;
     private boolean optimized;
     private final boolean escapePartitionNameOnFilter;
 
@@ -403,8 +403,8 @@ public class PartitionFilterGenerator extends PartitionParserEval {
     }
 
     static class PartitionCol {
-        private int index;
-        private FilterType type;
+        private final int index;
+        private final FilterType type;
         private int occurrences;
 
         PartitionCol(final int index, final String type) {

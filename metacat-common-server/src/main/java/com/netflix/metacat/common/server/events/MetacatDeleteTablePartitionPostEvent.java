@@ -37,6 +37,7 @@ import java.util.stream.Collectors;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatDeleteTablePartitionPostEvent extends MetacatEvent {
+    private static final long serialVersionUID = 1;
     private final List<String> partitionIds;
     private final List<PartitionDto> partitions;
 

@@ -35,6 +35,8 @@ import javax.annotation.Nonnull;
 @ToString(callSuper = true)
 public class MetacatDeleteTablePostEvent extends MetacatEvent {
 
+    private static final long serialVersionUID = 1;
+
     private final TableDto table;
     private final boolean isMView;
 
