@@ -34,6 +34,7 @@ import javax.annotation.Nonnull;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatUpdateTablePostEvent extends MetacatEvent {
+    private static final long serialVersionUID = 1;
     private TableDto oldTable;
     private TableDto currentTable;
     private boolean isLatestCurrentTable;

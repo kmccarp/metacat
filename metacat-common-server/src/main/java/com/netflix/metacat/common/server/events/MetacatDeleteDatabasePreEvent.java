@@ -35,6 +35,8 @@ import javax.annotation.Nonnull;
 @ToString(callSuper = true)
 public class MetacatDeleteDatabasePreEvent extends MetacatEvent {
 
+    private static final long serialVersionUID = 1;
+
     private final DatabaseDto database;
 
     /**

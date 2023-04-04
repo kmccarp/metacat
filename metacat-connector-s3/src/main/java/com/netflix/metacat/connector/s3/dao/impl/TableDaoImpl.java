@@ -112,7 +112,7 @@ public class TableDaoImpl extends IdEntityDaoImpl<Table> implements TableDao {
             query.setParameter("uris", uris);
         }
         final List<Object[]> result = query.getResultList();
-        return result.stream().collect(Collectors.groupingBy(o -> (String) o[2], Collectors
+        return result.stream().collect(Collectors.groupingBy(String.class::cast, Collectors
             .mapping(o -> QualifiedName.ofTable(sourceName, (String) o[0], (String) o[1]), Collectors.toList())));
     }
 }

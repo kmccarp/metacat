@@ -39,6 +39,7 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 public final class PartitionInfo extends BaseInfo {
+    private static final long serialVersionUID = 1;
     private StorageInfo serde;
     //to populate the metrics from iceberg
     private ObjectNode dataMetrics;

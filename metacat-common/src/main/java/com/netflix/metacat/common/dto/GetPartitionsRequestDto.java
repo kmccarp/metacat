@@ -32,6 +32,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 public class GetPartitionsRequestDto extends BaseDto {
+    private static final long serialVersionUID = 1;
     private String filter;
     private List<String> partitionNames;
     private Boolean includePartitionDetails = false;

@@ -38,6 +38,8 @@ import java.util.List;
 @ToString(callSuper = true)
 public class MetacatSaveTablePartitionPostEvent extends MetacatEvent {
 
+    private static final long serialVersionUID = 1;
+
     private final List<PartitionDto> partitions;
     private final PartitionsSaveResponseDto partitionsSaveResponse;
 

@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatCreateMViewPostEvent extends MetacatEvent {
+    private static final long serialVersionUID = 1;
     private final TableDto table;
     private final String filter;
     private final Boolean snapshot;
