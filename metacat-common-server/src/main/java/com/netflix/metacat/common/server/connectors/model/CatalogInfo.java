@@ -18,6 +18,7 @@ import java.util.Map;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public final class CatalogInfo extends BaseInfo {
+    private static final long serialVersionUID = 1;
     private ClusterInfo clusterInfo;
 
     /**

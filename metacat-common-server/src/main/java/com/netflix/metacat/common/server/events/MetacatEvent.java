@@ -37,6 +37,7 @@ import javax.annotation.Nonnull;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatEvent extends ApplicationEvent {
+    private static final long serialVersionUID = 1;
     private final QualifiedName name;
     private final MetacatRequestContext requestContext;
 

@@ -343,7 +343,7 @@ public class PolarisConnectorTableService implements ConnectorTableService {
                 ConnectorUtils.sort(tbls, sort, Comparator.comparing(t -> t.getTblName()));
             }
             return ConnectorUtils.paginate(tbls, pageable).stream()
-                .map(t -> polarisTableMapper.toInfo(t)).collect(Collectors.toList());
+                .map(polarisTableMapper::toInfo).collect(Collectors.toList());
         } catch (Exception exception) {
             final String msg = String.format("Failed polaris list tables %s using prefix %s", name, prefix);
             log.error(msg, exception);

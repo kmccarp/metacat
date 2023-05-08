@@ -80,8 +80,6 @@ public class FilterPartition {
                 throw new IllegalArgumentException(String.format("Invalid expression: %s", partitionExpression), e);
             } catch (StackOverflowError | ArrayIndexOutOfBoundsException | NullPointerException e) {
                 throw new IllegalArgumentException(String.format("Expression too long: %s", partitionExpression), e);
-            } catch (IllegalArgumentException e) {
-                throw e;
             } catch (Throwable t) {
                 log.warn("Caught unexpected exception during evaluatePartitionExpression", t);
                 return false;

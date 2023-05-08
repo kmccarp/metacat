@@ -15,6 +15,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatUpdateIcebergTablePostEvent extends MetacatEvent {
+    private static final long serialVersionUID = 1;
     private final TableDto oldTable;
     private final TableDto requestTable;
 

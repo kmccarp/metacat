@@ -37,6 +37,8 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class AddPartitionMessage extends SNSMessage<PartitionDto> {
 
+    private static final long serialVersionUID = 1;
+
     /**
      * Create a new AddPartitionMessage.
      *

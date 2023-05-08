@@ -37,6 +37,8 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class DeleteTableMessage extends SNSMessage<TableDto> {
 
+    private static final long serialVersionUID = 1;
+
     /**
      * Create a new DeleteTableMessage.
      *

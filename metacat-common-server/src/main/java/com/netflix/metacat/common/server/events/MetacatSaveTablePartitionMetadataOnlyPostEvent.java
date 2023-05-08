@@ -39,6 +39,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatSaveTablePartitionMetadataOnlyPostEvent extends MetacatEvent {
+    private static final long serialVersionUID = 1;
     private final List<PartitionDto> partitions;
     private final PartitionsSaveResponseDto partitionsSaveResponse;
 
