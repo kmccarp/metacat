@@ -34,6 +34,8 @@ import javax.annotation.Nonnull;
 @ToString(callSuper = true)
 public class MetacatRenameTablePreEvent extends MetacatEvent {
 
+    private static final long serialVersionUID = 1;
+
     private final QualifiedName newName;
 
     /**

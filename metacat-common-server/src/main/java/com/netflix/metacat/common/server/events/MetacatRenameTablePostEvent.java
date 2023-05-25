@@ -34,6 +34,7 @@ import javax.annotation.Nonnull;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class MetacatRenameTablePostEvent extends MetacatEvent {
+    private static final long serialVersionUID = 1;
     private final TableDto currentTable;
     private final TableDto oldTable;
     private final boolean isMView;

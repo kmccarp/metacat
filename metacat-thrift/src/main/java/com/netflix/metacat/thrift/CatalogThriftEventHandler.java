@@ -97,6 +97,7 @@ public class CatalogThriftEventHandler implements TServerEventHandler {
      * request context.
      */
     public static class CatalogServerRequestContext extends MetacatRequestContext implements ServerContext {
+        private static final long serialVersionUID = 1;
         private final long requestThreadId;
 
         CatalogServerRequestContext(

@@ -452,7 +452,7 @@ public class HiveConnectorTableService implements ConnectorTableService {
                     table.setParameters(parameters);
                 }
                 if (!parameters.containsKey(PARAMETER_EXTERNAL)
-                    || parameters.get(PARAMETER_EXTERNAL).equalsIgnoreCase("FALSE")) {
+                    || "FALSE".equalsIgnoreCase(parameters.get(PARAMETER_EXTERNAL))) {
                     parameters.put(PARAMETER_EXTERNAL, "TRUE");
                     metacatHiveClient.alterTable(oldName.getDatabaseName(), oldName.getTableName(), table);
                 }
