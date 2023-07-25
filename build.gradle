@@ -50,7 +50,7 @@ ext {
 }
 
 def javaProjects = subprojects.findAll {
-    it.name != "metacat-demo" && it.name != "metacat-ddl" && it.name != "metacat-docs"
+    !"metacat-demo".equals(it.name) && !"metacat-ddl".equals(it.name) && !"metacat-docs".equals(it.name)
 }
 
 allprojects {

@@ -777,15 +777,13 @@ public class MetacatController implements MetacatV1 {
         return this.requestWrapper.processRequest(
             name,
             "getTableNames",
-            () -> {
-                return this.tableService.getQualifiedNames(
+            () -> this.tableService.getQualifiedNames(
                     name,
                     GetTableNamesServiceParameters.builder()
                         .filter(filter)
                         .limit(limit)
                         .build()
-                );
-            }
+                )
         );
     }
 
@@ -825,15 +823,13 @@ public class MetacatController implements MetacatV1 {
         return this.requestWrapper.processRequest(
             name,
             "getTableNames",
-            () -> {
-                return this.tableService.getQualifiedNames(
+            () -> this.tableService.getQualifiedNames(
                     name,
                     GetTableNamesServiceParameters.builder()
                         .filter(filter)
                         .limit(limit)
                         .build()
-                );
-            }
+                )
         );
     }
 
