@@ -116,7 +116,7 @@ public class MySqlLookupService implements LookupService {
     public String getValue(final String name) {
         String result = null;
         final Set<String> values = getValues(name);
-        if (values != null && values.size() > 0) {
+        if (values != null && !values.isEmpty()) {
             result = values.iterator().next();
         }
         return result;
