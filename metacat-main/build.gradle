@@ -80,7 +80,7 @@ dependencies {
     runtime("org.webjars:hal-browser:3325375")
     runtime("org.springframework:spring-aspects")
     runtime("org.apache.logging.log4j:log4j-core")
-    runtime("mysql:mysql-connector-java:8.0.27")
+    runtime("mysql:mysql-connector-java:8.0.28")
 
     /*******************************
      * Test Dependencies
