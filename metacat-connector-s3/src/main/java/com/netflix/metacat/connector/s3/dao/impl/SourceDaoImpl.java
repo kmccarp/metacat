@@ -30,14 +30,14 @@ import java.util.concurrent.TimeUnit;
  * Source DAO impl.
  */
 public class SourceDaoImpl extends IdEntityDaoImpl<Source> implements SourceDao {
-    private LoadingCache<String, Source> sourceCache = CacheBuilder.newBuilder().expireAfterWrite(120, TimeUnit.MINUTES)
-        .build(
-            new CacheLoader<String, Source>() {
-                @Override
-                public Source load(final String name) throws Exception {
-                    return loadSource(name);
-                }
-            });
+    private final LoadingCache<String, Source> sourceCache = CacheBuilder.newBuilder().expireAfterWrite(120, TimeUnit.MINUTES)
+            .build(
+                    new CacheLoader<String, Source>() {
+                        @Override
+                        public Source load(final String name) throws Exception {
+                            return loadSource(name);
+                        }
+                    });
     /**
      * Constructor.
      * @param em entity manager
