@@ -50,10 +50,8 @@ class MetacatHealthIndicatorSpec extends Specification {
 
         then:
         health.getStatus() == Status.UP
-        health.getDetails().size() == 3
-        health.getDetails().get(MetacatHealthIndicator.PLUGIN_KEY) == true
-        health.getDetails().get(MetacatHealthIndicator.CATALOG_KEY) == true
-        health.getDetails().get(MetacatHealthIndicator.THRIFT_KEY) == true
+        health.getDetails().size() == 3 health.getDetails().get(MetacatHealthIndicator.PLUGIN_KEY) health.getDetails().get(MetacatHealthIndicator.CATALOG_KEY)
+         health.getDetails().get(MetacatHealthIndicator.THRIFT_KEY)
     }
 
     def "correctly sets unhealthy when catalogs are not loaded"() {
@@ -66,8 +64,7 @@ class MetacatHealthIndicatorSpec extends Specification {
         def health = healthIndicator.health()
 
         then:
-        health.getStatus() == Status.OUT_OF_SERVICE
-        health.getDetails().get(MetacatHealthIndicator.PLUGIN_KEY) == true
+        health.getStatus() == Status.OUT_OF_SERVICE health.getDetails().get(MetacatHealthIndicator.PLUGIN_KEY)
         health.getDetails().get(MetacatHealthIndicator.CATALOG_KEY) == false
         health.getDetails().get(MetacatHealthIndicator.THRIFT_KEY) == false
     }
