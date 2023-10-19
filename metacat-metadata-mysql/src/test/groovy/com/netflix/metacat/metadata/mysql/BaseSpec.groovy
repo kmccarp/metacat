@@ -111,45 +111,41 @@ class BaseSpec extends Specification {
     def runScript(Connection conn, Reader reader, String delimiter) throws IOException,
         SQLException {
         StringBuffer command = null;
-        try {
-            LineNumberReader lineReader = new LineNumberReader(reader);
-            String line = null;
-            while ((line = lineReader.readLine()) != null) {
-                if (command == null) {
-                    command = new StringBuffer();
-                }
-                String trimmedLine = line.trim();
-                if (trimmedLine.startsWith("--")) {
-                    println(trimmedLine);
-                } else if (trimmedLine.length() < 1
-                    || trimmedLine.startsWith("//")) {
-                    // Do nothing
-                } else if (trimmedLine.length() < 1
-                    || trimmedLine.startsWith("--")) {
-                    // Do nothing
-                } else if (trimmedLine.endsWith(delimiter)) {
-                    command.append(line.substring(0, line
-                        .lastIndexOf(delimiter)));
-                    command.append(" ");
-                    Statement statement = conn.createStatement();
-
-                    println(command);
-                    statement.execute(command.toString());
-
-                    command = null;
-                    try {
-                        statement.close();
-                    } catch (Exception e) {
-                        // Ignore to workaround a bug in Jakarta DBCP
-                    }
-                    Thread.yield();
-                } else {
-                    command.append(line);
-                    command.append(" ");
-                }
+        LineNumberReader lineReader = new LineNumberReader(reader)
+        String line = null
+        while ((line = lineReader.readLine()) != null) {
+            if (command == null) {
+                command = new StringBuffer();
             }
-        } catch (Exception e) {
-            throw e;
+            String trimmedLine = line.trim();
+            if (trimmedLine.startsWith("--")) {
+                println(trimmedLine);
+            } else if (trimmedLine.length() < 1
+                    || trimmedLine.startsWith("//")) {
+                // Do nothing
+            } else if (trimmedLine.length() < 1
+                    || trimmedLine.startsWith("--")) {
+                // Do nothing
+            } else if (trimmedLine.endsWith(delimiter)) {
+                command.append(line.substring(0, line
+                        .lastIndexOf(delimiter)));
+                command.append(" ");
+                Statement statement = conn.createStatement();
+
+                println(command);
+                statement.execute(command.toString());
+
+                command = null;
+                try {
+                    statement.close();
+                } catch (Exception e) {
+                    // Ignore to workaround a bug in Jakarta DBCP
+                }
+                Thread.yield();
+            } else {
+                command.append(line);
+                command.append(" ");
+            }
         }
     }
 
