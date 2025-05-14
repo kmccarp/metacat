@@ -15,9 +15,9 @@
  */
 package com.netflix.metacat.connector.hive.sql;
 
-import lombok.Getter;
-
 import javax.annotation.Nullable;
+
+import lombok.Getter;
 
 /**
  * Class representing the ids for a table.

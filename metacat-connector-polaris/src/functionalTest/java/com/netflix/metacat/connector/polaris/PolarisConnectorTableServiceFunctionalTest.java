@@ -1,5 +1,9 @@
 package com.netflix.metacat.connector.polaris;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -17,10 +21,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Test PolarisConnectorTableService in functional test.

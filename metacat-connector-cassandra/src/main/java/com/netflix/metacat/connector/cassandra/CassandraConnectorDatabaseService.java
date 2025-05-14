@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Comparator;
+import java.util.List;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.KeyspaceMetadata;
 import com.datastax.driver.core.MaterializedViewMetadata;
@@ -33,12 +38,7 @@ import com.netflix.metacat.common.server.connectors.model.DatabaseInfo;
 import com.netflix.metacat.common.server.connectors.exception.DatabaseNotFoundException;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * Implementation of the database service for Cassandra. For Cassandra the {@code Keyspace} is the equivalent of a JDBC

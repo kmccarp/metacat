@@ -1,9 +1,12 @@
 package com.netflix.metacat.connector.polaris.store.repos;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-
 import com.netflix.metacat.connector.polaris.store.entities.PolarisTableEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.domain.Slice;
@@ -12,10 +15,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Implementation for Custom JPA repository implementation for storing PolarisTableEntity.

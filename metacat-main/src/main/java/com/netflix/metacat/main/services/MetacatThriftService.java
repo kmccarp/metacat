@@ -12,14 +12,14 @@
  */
 package com.netflix.metacat.main.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.netflix.metacat.common.server.spi.MetacatCatalogConfig;
 import com.netflix.metacat.main.manager.ConnectorManager;
 import com.netflix.metacat.thrift.CatalogThriftService;
 import com.netflix.metacat.thrift.CatalogThriftServiceFactory;
-
 import jakarta.inject.Inject;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Metacat thrift service.

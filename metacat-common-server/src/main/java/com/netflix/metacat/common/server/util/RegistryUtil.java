@@ -16,9 +16,9 @@
 
 package com.netflix.metacat.common.server.util;
 
-import com.netflix.spectator.api.Registry;
-
 import java.util.concurrent.ThreadPoolExecutor;
+
+import com.netflix.spectator.api.Registry;
 
 /**
  * Utility functions for Registry.

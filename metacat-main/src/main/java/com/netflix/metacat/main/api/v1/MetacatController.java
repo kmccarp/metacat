@@ -13,6 +13,12 @@
 
 package com.netflix.metacat.main.api.v1;
 
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.netflix.metacat.common.NameDateDto;
@@ -55,14 +61,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Nullable;
-
 import jakarta.validation.Valid;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Supplier;
 
 /**
  * Metacat V1 API implementation.
@@ -756,15 +755,13 @@ public class MetacatController implements MetacatV1 {
         return this.requestWrapper.processRequest(
             name,
             "getTableNames",
-            () -> {
-                return this.tableService.getQualifiedNames(
+            () -> this.tableService.getQualifiedNames(
                     name,
                     GetTableNamesServiceParameters.builder()
                         .filter(filter)
                         .limit(limit)
                         .build()
-                );
-            }
+                )
         );
     }
 
@@ -804,15 +801,13 @@ public class MetacatController implements MetacatV1 {
         return this.requestWrapper.processRequest(
             name,
             "getTableNames",
-            () -> {
-                return this.tableService.getQualifiedNames(
+            () -> this.tableService.getQualifiedNames(
                     name,
                     GetTableNamesServiceParameters.builder()
                         .filter(filter)
                         .limit(limit)
                         .build()
-                );
-            }
+                )
         );
     }
 

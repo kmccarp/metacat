@@ -18,4 +18,5 @@
  */
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.metadata.mysql;
+
 import javax.annotation.ParametersAreNonnullByDefault;

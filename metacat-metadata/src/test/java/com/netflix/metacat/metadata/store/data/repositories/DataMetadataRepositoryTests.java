@@ -1,6 +1,8 @@
 //CHECKSTYLE:OFF
 package com.netflix.metacat.metadata.store.data.repositories;
 
+import java.util.Optional;
+
 import com.netflix.metacat.metadata.store.configs.UserMetadataStoreConfig;
 import com.netflix.metacat.metadata.store.data.entities.DataMetadataEntity;
 import com.netflix.metacat.metadata.util.EntityTestUtil;
@@ -13,9 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.util.Assert;
-
 import jakarta.transaction.Transactional;
-import java.util.Optional;
 
 /**
  * Test data metadata repository APIs

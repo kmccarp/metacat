@@ -18,14 +18,14 @@
 
 package com.netflix.metacat.connector.pig;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.connectors.ConnectorFactory;
 import com.netflix.metacat.common.server.connectors.ConnectorPlugin;
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.connector.pig.converters.PigTypeConverter;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * S3 plugin.

@@ -1,6 +1,8 @@
 
 package com.netflix.metacat.connector.polaris;
 
+import java.util.Date;
+
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
@@ -27,8 +29,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import spock.lang.Shared;
-
-import java.util.Date;
 
 
 /**

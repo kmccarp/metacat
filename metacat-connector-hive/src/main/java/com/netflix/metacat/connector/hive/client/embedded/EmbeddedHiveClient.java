@@ -16,6 +16,16 @@
 
 package com.netflix.metacat.connector.hive.client.embedded;
 
+import javax.annotation.Nullable;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.netflix.metacat.common.server.connectors.exception.ConnectorException;
@@ -33,16 +43,6 @@ import org.apache.hadoop.hive.metastore.api.Partition;
 import org.apache.hadoop.hive.metastore.api.Table;
 import org.apache.thrift.TException;
 import org.datanucleus.exceptions.NucleusDataStoreException;
-
-import javax.annotation.Nullable;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Embedded hive metastore client implementation.
@@ -369,7 +369,7 @@ public class EmbeddedHiveClient implements IMetacatHiveClient {
 
     private <R> R callWrap(final String requestName, final Callable<R> supplier) throws TException {
         final long start = registry.clock().wallTime();
-        final Map<String, String> tags = new HashMap<String, String>();
+        final Map<String, String> tags = new HashMap<>();
         tags.put("request", requestName);
 
         try {

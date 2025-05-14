@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.json.MetacatJson;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

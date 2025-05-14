@@ -13,6 +13,15 @@
 
 package com.netflix.metacat.main.services.impl;
 
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.base.Strings;
 import com.google.common.base.Throwables;
@@ -60,15 +69,6 @@ import com.netflix.metacat.main.services.TableService;
 import com.netflix.spectator.api.Id;
 import com.netflix.spectator.api.Registry;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * Partition service.
@@ -461,7 +461,7 @@ public class PartitionServiceImpl implements PartitionService {
         final Map<String, List<QualifiedName>> result = Maps.newConcurrentMap();
         final List<ListenableFuture<Void>> futures = Lists.newArrayList();
         final MetacatRequestContext metacatRequestContext = MetacatContextManager.getContext();
-        connectorManager.getPartitionServices().forEach(service -> {
+        connectorManager.getPartitionServices().forEach(service ->
             futures.add(threadServiceManager.getExecutor().submit(() -> {
                 final ConnectorRequestContext connectorRequestContext
                     = converterUtil.toConnectorContext(metacatRequestContext);
@@ -480,8 +480,7 @@ public class PartitionServiceImpl implements PartitionService {
                     log.debug("Partition service doesn't support getPartitionNames. Ignoring.");
                 }
                 return null;
-            }));
-        });
+            })));
         try {
             Futures.allAsList(futures).get(1, TimeUnit.HOURS);
         } catch (Exception e) {

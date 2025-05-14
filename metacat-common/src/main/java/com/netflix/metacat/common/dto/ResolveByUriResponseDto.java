@@ -17,11 +17,11 @@
  */
 package com.netflix.metacat.common.dto;
 
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.List;
 
 /**
  * ResolveByUriResponseDto.

@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.properties;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.base.Splitter;
 import lombok.NonNull;
 import org.apache.commons.lang3.StringUtils;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Table related properties.

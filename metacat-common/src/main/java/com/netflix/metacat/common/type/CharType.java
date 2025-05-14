@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.type;
 
-import com.google.common.collect.ImmutableList;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import com.google.common.collect.ImmutableList;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 /**
  * Char type class.

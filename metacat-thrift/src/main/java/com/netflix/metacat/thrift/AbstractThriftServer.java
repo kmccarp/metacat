@@ -16,6 +16,14 @@
  */
 package com.netflix.metacat.thrift;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.netflix.metacat.common.server.properties.Config;
 import com.netflix.metacat.common.server.util.RegistryUtil;
@@ -29,14 +37,6 @@ import org.apache.thrift.server.TServerEventHandler;
 import org.apache.thrift.server.TThreadPoolServer;
 import org.apache.thrift.transport.TServerSocket;
 import org.apache.thrift.transport.TServerTransport;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Base implementation for thrift server.

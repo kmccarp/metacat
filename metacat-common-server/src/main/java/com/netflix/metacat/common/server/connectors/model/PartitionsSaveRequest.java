@@ -17,10 +17,10 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.util.List;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.List;
 
 /**
  * Partition save request.

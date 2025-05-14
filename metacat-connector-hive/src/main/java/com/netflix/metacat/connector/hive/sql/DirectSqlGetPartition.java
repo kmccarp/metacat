@@ -15,6 +15,23 @@
  */
 package com.netflix.metacat.connector.hive.sql;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.StringReader;
+import java.sql.Types;
+import java.time.Instant;
+import java.util.Collection;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
@@ -55,23 +72,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.io.StringReader;
-import java.sql.Types;
-import java.time.Instant;
-import java.util.Collection;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * This class makes direct sql calls to get partitions.
@@ -884,7 +884,7 @@ public class DirectSqlGetPartition {
         Optional<QualifiedName> sourceTable = Optional.empty();
         final boolean isAuditProcessingEnabled = Boolean.valueOf(configuration
             .getOrDefault(HiveConfigConstants.ENABLE_AUDIT_PROCESSING, "true"));
-        if (!forceDisableAudit && isAuditProcessingEnabled && databaseName.equals(AUDIT_DB)) {
+        if (!forceDisableAudit && isAuditProcessingEnabled && AUDIT_DB.equals(databaseName)) {
             final Matcher matcher = AUDIT_TABLENAME_PATTERN.matcher(tableName);
             if (matcher.matches()) {
                 final String sourceDatabaseName = matcher.group("db");

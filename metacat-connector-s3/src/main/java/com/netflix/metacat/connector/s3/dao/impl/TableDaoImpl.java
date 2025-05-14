@@ -13,21 +13,21 @@
 
 package com.netflix.metacat.connector.s3.dao.impl;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.connector.s3.dao.TableDao;
 import com.netflix.metacat.connector.s3.model.Table;
-
 import jakarta.inject.Inject;
 import jakarta.inject.Provider;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Table DAO impl.

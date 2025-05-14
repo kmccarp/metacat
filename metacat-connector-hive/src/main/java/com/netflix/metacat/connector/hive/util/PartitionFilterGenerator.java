@@ -16,6 +16,12 @@
 
 package com.netflix.metacat.connector.hive.util;
 
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.List;
+import java.util.Map;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.server.partition.parser.ASTAND;
@@ -37,12 +43,6 @@ import org.apache.hadoop.hive.metastore.HiveMetaStore;
 import org.apache.hadoop.hive.metastore.api.FieldSchema;
 import org.apache.hadoop.hive.serde.serdeConstants;
 
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Map;
-
 /**
  * PartitionFilterGenerator.
  *
@@ -52,7 +52,7 @@ import java.util.Map;
 public class PartitionFilterGenerator extends PartitionParserEval {
     private final Map<String, PartitionCol> partitionColumns;
     private final List<Object> params;
-    private List<String> partVals;
+    private final List<String> partVals;
     private boolean optimized;
     private final boolean escapePartitionNameOnFilter;
 

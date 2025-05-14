@@ -17,10 +17,10 @@
  */
 package com.netflix.metacat.connector.redshift;
 
+import java.util.Map;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.server.connectors.DefaultConnectorFactory;
-
-import java.util.Map;
 
 /**
  * Connector Factory for Redshift.

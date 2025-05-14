@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.common.server.connectors.exception;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Exception when partition already exists.

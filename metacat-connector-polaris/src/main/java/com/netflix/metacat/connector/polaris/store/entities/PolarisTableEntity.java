@@ -1,5 +1,7 @@
 package com.netflix.metacat.connector.polaris.store.entities;
 
+import java.util.Map;
+
 import jakarta.persistence.Convert;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +12,6 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -20,7 +21,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
-import java.util.Map;
 
 
 /**

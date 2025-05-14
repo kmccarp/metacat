@@ -16,11 +16,11 @@
 
 package com.netflix.metacat.connector.hive.metastore;
 
+import java.util.List;
+
 import org.apache.hadoop.hive.metastore.IHMSHandler;
 import org.apache.hadoop.hive.metastore.api.Partition;
 import org.apache.thrift.TException;
-
-import java.util.List;
 
 /**
  * IMetacatHMSHandler.

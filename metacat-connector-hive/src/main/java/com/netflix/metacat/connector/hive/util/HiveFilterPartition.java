@@ -1,9 +1,9 @@
 package com.netflix.metacat.connector.hive.util;
 
+import java.util.Map;
+
 import com.netflix.metacat.common.server.partition.util.FilterPartition;
 import org.apache.hadoop.hive.common.FileUtils;
-
-import java.util.Map;
 
 /**
  * Filter partition for hive.

@@ -17,17 +17,17 @@
  */
 package com.netflix.metacat.common.server.properties;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Splitter;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.netflix.metacat.common.QualifiedName;
 import lombok.NonNull;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Utility methods for working with properties.

@@ -1,5 +1,9 @@
 package com.netflix.metacat.connector.polaris;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.connectors.ConnectorPartitionService;
@@ -12,10 +16,6 @@ import com.netflix.metacat.common.server.connectors.model.TableInfo;
 import com.netflix.metacat.connector.hive.iceberg.IcebergTableHandler;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Partition service for Iceberg tables in Polaris.

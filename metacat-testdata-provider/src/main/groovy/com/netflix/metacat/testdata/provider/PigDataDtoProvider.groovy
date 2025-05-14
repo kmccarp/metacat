@@ -299,7 +299,7 @@ class PigDataDtoProvider {
         } else {
             s.append('"').append(owner).append('"')
         }
-        s.append(',"name":"' + owner + '"}}')
+        s.append(',"name":"').append(owner).append('"}}')
         return metacatJson.parseJsonObject(s.toString())
     }
 }

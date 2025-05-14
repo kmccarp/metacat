@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.connector.snowflake;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.connectors.ConnectorFactory;
 import com.netflix.metacat.common.server.connectors.ConnectorPlugin;
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * Snowflake Connector Plugin.

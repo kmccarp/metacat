@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.connector.s3;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.google.inject.persist.Transactional;
@@ -33,13 +38,8 @@ import com.netflix.metacat.connector.s3.dao.DatabaseDao;
 import com.netflix.metacat.connector.s3.dao.SourceDao;
 import com.netflix.metacat.connector.s3.model.Database;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * S3 Connector Database Service implementation.

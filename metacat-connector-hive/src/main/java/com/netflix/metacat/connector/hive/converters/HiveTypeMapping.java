@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.connector.hive.converters;
 
+import java.util.Map;
+
 import com.google.common.collect.ImmutableMap;
 import com.netflix.metacat.common.type.BaseType;
 import com.netflix.metacat.common.type.Type;
@@ -21,8 +23,6 @@ import com.netflix.metacat.common.type.VarbinaryType;
 import lombok.Getter;
 import org.apache.hadoop.hive.serde.serdeConstants;
 import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
-
-import java.util.Map;
 
 /**
  * Hive type mapping.

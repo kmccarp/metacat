@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.connector.s3.model;
 
+import java.util.Map;
+
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -21,7 +23,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.UniqueConstraint;
-import java.util.Map;
 
 /**
  * Info.

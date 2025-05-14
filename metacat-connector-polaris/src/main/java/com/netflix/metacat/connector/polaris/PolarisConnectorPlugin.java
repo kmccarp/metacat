@@ -1,5 +1,7 @@
 package com.netflix.metacat.connector.polaris;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.connectors.ConnectorFactory;
 import com.netflix.metacat.common.server.connectors.ConnectorInfoConverter;
@@ -8,8 +10,6 @@ import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.connector.hive.converters.HiveConnectorInfoConverter;
 import com.netflix.metacat.connector.hive.converters.HiveTypeConverter;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 /**
  * Polaris Connector Plugin.
  */

@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.main.api.v1;
 
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.GetPartitionsRequestDto;
 import com.netflix.metacat.common.dto.Pageable;
@@ -46,10 +50,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Nullable;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Partition V1 API implementation.

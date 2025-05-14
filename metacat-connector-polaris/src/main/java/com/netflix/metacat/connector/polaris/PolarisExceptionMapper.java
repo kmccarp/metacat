@@ -1,10 +1,10 @@
 package com.netflix.metacat.connector.polaris;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.ConnectorException;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * Class to convert Iceberg client exceptions to connector exceptions.

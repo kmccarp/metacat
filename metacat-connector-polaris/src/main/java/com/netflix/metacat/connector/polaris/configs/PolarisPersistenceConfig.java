@@ -1,5 +1,6 @@
 package com.netflix.metacat.connector.polaris.configs;
 
+import javax.sql.DataSource;
 
 import com.netflix.metacat.connector.polaris.store.PolarisStoreConnector;
 import com.netflix.metacat.connector.polaris.store.PolarisStoreService;
@@ -20,8 +21,6 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-import javax.sql.DataSource;
 
 /**
  * The Polaris Store Persistence config.

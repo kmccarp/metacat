@@ -16,6 +16,16 @@
 
 package com.netflix.metacat.connector.hive;
 
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -55,16 +65,6 @@ import org.apache.hadoop.hive.metastore.api.SerDeInfo;
 import org.apache.hadoop.hive.metastore.api.StorageDescriptor;
 import org.apache.hadoop.hive.metastore.api.Table;
 import org.apache.thrift.TException;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * HiveConnectorPartitionService.
@@ -449,7 +449,7 @@ public class HiveConnectorPartitionService implements ConnectorPartitionService 
      * @return partition keys
      */
     protected List<String> getPartitionKeys(final List<FieldSchema> fields) {
-        return (fields != null) ? fields.stream().map(FieldSchema::getName).collect(Collectors.toList())
+        return fields != null ? fields.stream().map(FieldSchema::getName).collect(Collectors.toList())
             : Lists.newArrayList();
     }
 

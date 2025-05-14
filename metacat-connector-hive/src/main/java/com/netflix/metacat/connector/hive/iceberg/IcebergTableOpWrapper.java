@@ -16,6 +16,12 @@
  */
 package com.netflix.metacat.connector.hive.iceberg;
 
+import javax.annotation.Nullable;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.base.Throwables;
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
@@ -26,12 +32,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.iceberg.ScanSummary;
 import org.apache.iceberg.Table;
 import org.apache.iceberg.expressions.Expression;
-
-import javax.annotation.Nullable;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Iceberg table operation wrapper.
@@ -72,7 +72,7 @@ public class IcebergTableOpWrapper {
         // Cancel the iceberg call if it times out.
         //
         final Future<Map<String, ScanSummary.PartitionMetrics>> future = threadServiceManager.getExecutor()
-            .submit(() -> (filter != null) ? ScanSummary.of(icebergTable.newScan().filter(filter))
+            .submit(() -> filter != null ? ScanSummary.of(icebergTable.newScan().filter(filter))
             .limit(config.getMaxPartitionsThreshold())
             .throwIfLimited()
             .build()

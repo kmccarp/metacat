@@ -14,14 +14,14 @@
 
 package com.netflix.metacat.main.manager;
 
+import java.util.List;
+import java.util.ServiceLoader;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.google.common.collect.ImmutableList;
 import com.netflix.metacat.common.server.connectors.ConnectorPlugin;
 import com.netflix.metacat.common.server.converter.TypeConverterFactory;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.List;
-import java.util.ServiceLoader;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Plugin Manager. This loads the connector plugins using the ServiceLoader.

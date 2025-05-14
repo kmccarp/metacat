@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.connector.redshift;
 
+import java.sql.SQLException;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.ConnectorException;
 import com.netflix.metacat.common.server.connectors.exception.DatabaseAlreadyExistsException;
@@ -24,8 +26,6 @@ import com.netflix.metacat.common.server.connectors.exception.DatabaseNotFoundEx
 import com.netflix.metacat.common.server.connectors.exception.TableAlreadyExistsException;
 import com.netflix.metacat.common.server.connectors.exception.TableNotFoundException;
 import com.netflix.metacat.connector.jdbc.JdbcExceptionMapper;
-
-import java.sql.SQLException;
 
 /**
  * Exception mapper for Redshift SQLExceptions.

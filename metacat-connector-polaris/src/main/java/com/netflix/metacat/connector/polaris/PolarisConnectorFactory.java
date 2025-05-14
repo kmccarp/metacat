@@ -1,5 +1,7 @@
 package com.netflix.metacat.connector.polaris;
 
+import java.util.Collections;
+
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.connectors.ConnectorDatabaseService;
 import com.netflix.metacat.common.server.connectors.ConnectorInfoConverter;
@@ -9,8 +11,6 @@ import com.netflix.metacat.common.server.connectors.SpringConnectorFactory;
 import com.netflix.metacat.connector.polaris.configs.PolarisConnectorConfig;
 import com.netflix.metacat.connector.polaris.configs.PolarisPersistenceConfig;
 import org.springframework.core.env.MapPropertySource;
-
-import java.util.Collections;
 
 /**
  * Connector Factory for Polaris.

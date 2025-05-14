@@ -16,16 +16,16 @@
 
 package com.netflix.metacat.connector.druid.converter;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.netflix.metacat.connector.druid.DruidConfigConstants;
-import org.apache.commons.lang3.StringUtils;
-
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.netflix.metacat.connector.druid.DruidConfigConstants;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Druid Converter Util.
@@ -98,7 +98,7 @@ public final class DruidConverterUtil {
             ? Arrays.asList(loadspecNode.get(DruidConfigConstants.LOADSPEC_KEY).asText().split(","))
             : new ArrayList<>();
         final LoadSpec loadSpec = new LoadSpec(loadspecNode.get(DruidConfigConstants.LOADSPEC_TYPE).asText(),
-            bucket, keys, StringUtils.isEmpty(bucket) || keys.size() == 0
+            bucket, keys, StringUtils.isEmpty(bucket) || keys.isEmpty()
             ? "" : getUriFromKey(bucket, keys.get(0))
         );
         final String dimensions = node.get(DruidConfigConstants.DIMENSIONS).asText();

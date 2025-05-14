@@ -16,10 +16,10 @@
 
 package com.netflix.metacat.common.server.events;
 
+import java.lang.reflect.Method;
+
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.EventListenerFactory;
-
-import java.lang.reflect.Method;
 
 /**
  * This class overrides the DefaultEventListenerFactory in the Spring container.

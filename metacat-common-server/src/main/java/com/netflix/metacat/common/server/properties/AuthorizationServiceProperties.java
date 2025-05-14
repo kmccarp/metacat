@@ -17,18 +17,18 @@
 
 package com.netflix.metacat.common.server.properties;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.exception.MetacatException;
 import lombok.Data;
 import lombok.NonNull;
 import org.apache.commons.lang3.StringUtils;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Properties related to authorization.

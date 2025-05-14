@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.properties;
 
-import com.netflix.metacat.common.QualifiedName;
-import lombok.NonNull;
-
 import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.netflix.metacat.common.QualifiedName;
+import lombok.NonNull;
 
 /**
  * A default implementation of the config interface.

@@ -13,6 +13,10 @@
 
 package com.netflix.metacat.common.server.partition.util;
 
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.Map;
+
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.server.partition.parser.ParseException;
 import com.netflix.metacat.common.server.partition.parser.PartitionParser;
@@ -20,10 +24,6 @@ import com.netflix.metacat.common.server.partition.parser.TokenMgrError;
 import com.netflix.metacat.common.server.partition.visitor.PartitionParserEval;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
-
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.Map;
 
 /**
  * Partition filter utility.

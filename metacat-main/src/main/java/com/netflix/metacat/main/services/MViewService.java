@@ -14,6 +14,10 @@
 
 package com.netflix.metacat.main.services;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.NameDateDto;
 import com.netflix.metacat.common.QualifiedName;
@@ -24,10 +28,6 @@ import com.netflix.metacat.common.dto.PartitionsSaveRequestDto;
 import com.netflix.metacat.common.dto.PartitionsSaveResponseDto;
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.common.dto.TableDto;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * View service.

@@ -1,6 +1,9 @@
 
 package com.netflix.metacat.connector.polaris;
 
+import java.util.Arrays;
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
@@ -15,9 +18,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.Arrays;
-import java.util.List;
 
 
 /**

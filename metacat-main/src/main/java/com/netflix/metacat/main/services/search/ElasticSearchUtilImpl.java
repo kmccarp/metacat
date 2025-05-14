@@ -14,6 +14,14 @@
 
 package com.netflix.metacat.main.services.search;
 
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.rholder.retry.RetryException;
 import com.github.rholder.retry.Retryer;
@@ -60,14 +68,6 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.transport.ReceiveTimeoutTransportException;
 import org.elasticsearch.transport.TransportException;
 import org.joda.time.Instant;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 
 /**
@@ -236,11 +236,10 @@ public class ElasticSearchUtilImpl implements ElasticSearchUtil {
         try {
             RETRY_ES_PUBLISH.call(() -> {
                 final BulkRequestBuilder bulkRequest = client.prepareBulk();
-                ids.forEach(id -> {
+                ids.forEach(id ->
                     bulkRequest.add(client.prepareUpdate(esIndex, type, id)
                         .setRetryOnConflict(NO_OF_CONFLICT_RETRIES)
-                        .setDoc(metacatJson.toJsonAsBytes(node), XContentType.JSON));
-                });
+                        .setDoc(metacatJson.toJsonAsBytes(node), XContentType.JSON)));
                 final BulkResponse bulkResponse = bulkRequest.execute().actionGet(esBulkCallTimeout);
                 if (bulkResponse.hasFailures()) {
                     for (BulkItemResponse item : bulkResponse.getItems()) {

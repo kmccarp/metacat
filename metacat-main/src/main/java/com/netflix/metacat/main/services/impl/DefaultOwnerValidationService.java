@@ -1,5 +1,16 @@
 package com.netflix.metacat.main.services.impl;
 
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import com.google.common.collect.ImmutableSet;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
@@ -14,18 +25,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.annotation.Nullable;
 import jakarta.servlet.http.HttpServletRequest;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * A default implementation of Ownership validation service that check for users against
@@ -139,7 +139,7 @@ public class DefaultOwnerValidationService implements OwnerValidationService {
                 registry.counter(
                     "metacat.table.owner.invalid",
                     "operation", operationName,
-                    "scheme", String.valueOf(context.getScheme()),
+                    "scheme", context.getScheme(),
                     "catalogAndDb", name.getCatalogName() + "_" + name.getDatabaseName()
                 ).increment();
 

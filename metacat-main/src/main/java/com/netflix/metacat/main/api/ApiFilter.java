@@ -13,10 +13,11 @@
 
 package com.netflix.metacat.main.api;
 
+import java.io.IOException;
+
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.server.util.MetacatContextManager;
 import lombok.extern.slf4j.Slf4j;
-
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.FilterConfig;
@@ -24,7 +25,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 /**
  * REST Interceptor.

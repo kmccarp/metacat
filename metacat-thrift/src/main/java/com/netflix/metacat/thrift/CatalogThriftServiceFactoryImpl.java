@@ -16,6 +16,8 @@
  */
 package com.netflix.metacat.thrift;
 
+import java.util.Objects;
+
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
@@ -23,8 +25,6 @@ import com.netflix.metacat.common.server.api.v1.MetacatV1;
 import com.netflix.metacat.common.server.api.v1.PartitionV1;
 import com.netflix.metacat.common.server.properties.Config;
 import com.netflix.spectator.api.Registry;
-
-import java.util.Objects;
 
 /**
  * Thrift service factory.

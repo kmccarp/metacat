@@ -16,6 +16,14 @@
 
 package com.netflix.metacat.connector.druid.client;
 
+import javax.annotation.Nullable;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.exception.MetacatException;
 import com.netflix.metacat.common.json.MetacatJsonLocator;
@@ -25,14 +33,6 @@ import com.netflix.metacat.connector.druid.MetacatDruidClient;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONArray;
 import org.springframework.web.client.RestTemplate;
-
-import javax.annotation.Nullable;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 /**
  * DruidHttpClientImpl.

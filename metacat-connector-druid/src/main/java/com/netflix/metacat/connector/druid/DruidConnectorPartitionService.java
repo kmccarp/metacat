@@ -16,6 +16,9 @@
 
 package com.netflix.metacat.connector.druid;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.ConnectorPartitionService;
@@ -27,9 +30,6 @@ import com.netflix.metacat.connector.druid.converter.DataSource;
 import com.netflix.metacat.connector.druid.converter.DruidConnectorInfoConverter;
 import com.netflix.metacat.connector.druid.converter.DruidConverterUtil;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**

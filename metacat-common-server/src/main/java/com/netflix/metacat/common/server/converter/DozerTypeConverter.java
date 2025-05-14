@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.converter;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.common.server.util.MetacatContextManager;
 import com.netflix.metacat.common.type.Type;
 import lombok.NonNull;
 import org.dozer.DozerConverter;
-
-import javax.annotation.Nonnull;
 
 /**
  * Dozer converter implementation for data types.
@@ -33,7 +33,7 @@ import javax.annotation.Nonnull;
  * @since 1.0.0
  */
 public class DozerTypeConverter extends DozerConverter<Type, String> {
-    private TypeConverterFactory typeConverterFactory;
+    private final TypeConverterFactory typeConverterFactory;
 
     /**
      * Constructor.

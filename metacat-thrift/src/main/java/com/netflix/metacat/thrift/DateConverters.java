@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.thrift;
 
-import com.netflix.metacat.common.server.properties.Config;
-import lombok.NonNull;
-
 import javax.annotation.Nullable;
 import java.time.Instant;
 import java.util.Date;
+
+import com.netflix.metacat.common.server.properties.Config;
+import lombok.NonNull;
 
 /**
  * Date converter.

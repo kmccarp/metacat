@@ -13,6 +13,11 @@
 
 package com.netflix.metacat.main.services.impl;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
@@ -33,11 +38,6 @@ import com.netflix.metacat.main.manager.ConnectorManager;
 import com.netflix.metacat.main.services.CatalogService;
 import com.netflix.metacat.common.server.spi.MetacatCatalogConfig;
 import com.netflix.metacat.main.services.GetCatalogServiceParameters;
-
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Catalog service implementation.

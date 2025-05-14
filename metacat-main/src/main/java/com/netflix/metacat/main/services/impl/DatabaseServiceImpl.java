@@ -13,6 +13,12 @@
 
 package com.netflix.metacat.main.services.impl;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -41,12 +47,6 @@ import com.netflix.metacat.main.services.DatabaseService;
 import com.netflix.metacat.main.services.GetDatabaseServiceParameters;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Database service implementation.

@@ -1,5 +1,12 @@
 package com.netflix.metacat.connector.polaris.store;
 
+import javax.annotation.Nullable;
+import java.time.Instant;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.connector.polaris.store.entities.AuditEntity;
 import com.netflix.metacat.connector.polaris.store.entities.PolarisDatabaseEntity;
@@ -9,13 +16,6 @@ import com.netflix.metacat.connector.polaris.store.repos.PolarisTableRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Nullable;
-import java.time.Instant;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * This class exposes APIs for CRUD operations.

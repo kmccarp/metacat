@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.metadata.mysql;
 
+import javax.sql.DataSource;
+
 import com.netflix.metacat.common.json.MetacatJson;
 import com.netflix.metacat.common.server.converter.ConverterUtil;
 import com.netflix.metacat.common.server.properties.Config;
@@ -33,8 +35,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-
-import javax.sql.DataSource;
 
 /**
  * MySql UserMetadata Config.

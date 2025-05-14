@@ -15,6 +15,12 @@
  */
 package com.netflix.metacat.connector.hive.sql;
 
+import javax.annotation.Nullable;
+import java.sql.Types;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.MapDifference;
@@ -33,12 +39,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Nullable;
-import java.sql.Types;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * This class makes direct sql calls to update database metadata.

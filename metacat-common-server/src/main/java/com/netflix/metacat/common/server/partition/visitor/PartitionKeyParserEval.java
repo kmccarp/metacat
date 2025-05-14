@@ -13,6 +13,10 @@
 
 package com.netflix.metacat.common.server.partition.visitor;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.google.common.collect.Sets;
 import com.netflix.metacat.common.server.partition.parser.ASTAND;
 import com.netflix.metacat.common.server.partition.parser.ASTBETWEEN;
@@ -27,10 +31,6 @@ import com.netflix.metacat.common.server.partition.parser.ASTVAR;
 import com.netflix.metacat.common.server.partition.parser.SimpleNode;
 import com.netflix.metacat.common.server.partition.parser.Variable;
 import com.netflix.metacat.common.server.partition.util.PartitionUtil;
-
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Partition key evaluation.

@@ -1,5 +1,13 @@
 package com.netflix.metacat.connector.polaris;
 
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -36,14 +44,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataIntegrityViolationException;
-
-import javax.annotation.Nullable;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * table service for polaris connector.
@@ -206,7 +206,7 @@ public class PolarisConnectorTableService implements ConnectorTableService {
     ) {
         try {
             final List<QualifiedName> qualifiedNames = Lists.newArrayList();
-            final String tableFilter = (prefix != null && prefix.isTableDefinition()) ? prefix.getTableName() : "";
+            final String tableFilter = prefix != null && prefix.isTableDefinition() ? prefix.getTableName() : "";
             for (String tableName : polarisStoreService.getTables(name.getDatabaseName(),
                 tableFilter,
                 connectorContext.getConfig().getListTableNamesPageSize())
@@ -380,13 +380,13 @@ public class PolarisConnectorTableService implements ConnectorTableService {
         @Nullable final Pageable pageable
     ) {
         try {
-            final String tableFilter = (prefix != null && prefix.isTableDefinition()) ? prefix.getTableName() : "";
+            final String tableFilter = prefix != null && prefix.isTableDefinition() ? prefix.getTableName() : "";
             final List<PolarisTableEntity> tbls =
                 polarisStoreService.getTableEntities(name.getDatabaseName(),
                     tableFilter,
                     connectorContext.getConfig().getListTableEntitiesPageSize());
             if (sort != null) {
-                ConnectorUtils.sort(tbls, sort, Comparator.comparing(t -> t.getTblName()));
+                ConnectorUtils.sort(tbls, sort, Comparator.comparing(PolarisTableEntity::getTblName));
             }
             return ConnectorUtils.paginate(tbls, pageable).stream()
                 .map(

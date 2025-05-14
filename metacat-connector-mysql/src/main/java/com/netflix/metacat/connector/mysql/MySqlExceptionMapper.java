@@ -17,6 +17,9 @@
  */
 package com.netflix.metacat.connector.mysql;
 
+import javax.annotation.Nonnull;
+import java.sql.SQLException;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.ConnectorException;
 import com.netflix.metacat.common.server.connectors.exception.DatabaseAlreadyExistsException;
@@ -25,9 +28,6 @@ import com.netflix.metacat.common.server.connectors.exception.TableAlreadyExists
 import com.netflix.metacat.common.server.connectors.exception.TableNotFoundException;
 import com.netflix.metacat.connector.jdbc.JdbcExceptionMapper;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.sql.SQLException;
 
 /**
  * Convert MySQL exceptions into generic connector exceptions for use higher up in the system.

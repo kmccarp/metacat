@@ -16,9 +16,9 @@
 
 package com.netflix.metacat.connector.druid.converter;
 
-import lombok.Data;
-
 import java.time.Instant;
+
+import lombok.Data;
 
 /**
  * Interval.

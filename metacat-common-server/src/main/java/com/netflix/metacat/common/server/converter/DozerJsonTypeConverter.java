@@ -1,5 +1,7 @@
 package com.netflix.metacat.common.server.converter;
 
+import javax.annotation.Nonnull;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.common.server.util.MetacatContextManager;
@@ -7,15 +9,13 @@ import com.netflix.metacat.common.type.Type;
 import lombok.NonNull;
 import org.dozer.CustomConverter;
 
-import javax.annotation.Nonnull;
-
 /**
  * Dozer converter implementation to convert data types to JSON format.
  *
  * @author amajumdar
  */
 public class DozerJsonTypeConverter implements CustomConverter {
-    private TypeConverterFactory typeConverterFactory;
+    private final TypeConverterFactory typeConverterFactory;
 
     /**
      * Constructor.

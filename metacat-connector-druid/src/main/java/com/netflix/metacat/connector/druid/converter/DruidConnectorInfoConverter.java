@@ -1,5 +1,10 @@
 package com.netflix.metacat.connector.druid.converter;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.ConnectorInfoConverter;
 import com.netflix.metacat.common.server.connectors.model.FieldInfo;
@@ -8,11 +13,6 @@ import com.netflix.metacat.common.server.connectors.model.StorageInfo;
 import com.netflix.metacat.common.server.connectors.model.TableInfo;
 import com.netflix.metacat.common.type.BaseType;
 import com.netflix.metacat.connector.druid.DruidConfigConstants;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Druid Info Converter.

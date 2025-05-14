@@ -17,18 +17,18 @@
  */
 package com.netflix.metacat.client.module;
 
+import javax.annotation.Nonnull;
+import java.io.IOException;
+import java.io.Reader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.RuntimeJsonMappingException;
 import feign.Response;
 import feign.codec.Decoder;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.io.IOException;
-import java.io.Reader;
-import java.lang.reflect.Type;
-import java.net.HttpURLConnection;
 
 /**
  * Decoder for Metacat response.

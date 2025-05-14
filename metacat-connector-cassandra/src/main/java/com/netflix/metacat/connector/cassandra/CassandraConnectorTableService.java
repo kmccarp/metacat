@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Comparator;
+import java.util.List;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ColumnMetadata;
 import com.datastax.driver.core.KeyspaceMetadata;
@@ -36,12 +41,7 @@ import com.netflix.metacat.common.server.connectors.exception.DatabaseNotFoundEx
 import com.netflix.metacat.common.server.connectors.exception.TableNotFoundException;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * Cassandra implementation of the ConnectorTableService.
@@ -181,7 +181,7 @@ public class CassandraConnectorTableService extends CassandraService implements 
 
             // Sort
             if (sort != null) {
-                final Comparator<TableInfo> tableComparator = Comparator.comparing((t) -> t.getName().getTableName());
+                final Comparator<TableInfo> tableComparator = Comparator.comparing(t -> t.getName().getTableName());
                 ConnectorUtils.sort(tables, sort, tableComparator);
             }
 

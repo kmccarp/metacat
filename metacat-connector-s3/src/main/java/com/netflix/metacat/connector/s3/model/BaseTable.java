@@ -13,12 +13,13 @@
 
 package com.netflix.metacat.connector.s3.model;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.OneToMany;
-import java.util.List;
 
 /**
  * Base Table.

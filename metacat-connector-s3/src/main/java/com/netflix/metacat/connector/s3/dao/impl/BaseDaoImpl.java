@@ -13,15 +13,15 @@
 
 package com.netflix.metacat.connector.s3.dao.impl;
 
+import java.util.List;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.connector.s3.dao.BaseDao;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
 import jakarta.inject.Provider;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
-import java.util.List;
 
 /**
  * Base DAO implementation.

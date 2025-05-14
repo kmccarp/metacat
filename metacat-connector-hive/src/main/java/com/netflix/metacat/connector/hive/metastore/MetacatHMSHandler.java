@@ -15,6 +15,17 @@
  */
 package com.netflix.metacat.connector.hive.metastore;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.regex.Pattern;
+
 import com.netflix.metacat.connector.hive.monitoring.HiveMetrics;
 import com.netflix.spectator.api.NoopRegistry;
 import com.netflix.spectator.api.Registry;
@@ -40,17 +51,6 @@ import org.apache.hadoop.hive.metastore.api.hive_metastoreConstants;
 import org.apache.hadoop.hive.metastore.partition.spec.PartitionSpecProxy;
 import org.apache.thrift.TException;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.regex.Pattern;
-
 /**
  * This is an extension of the HiveMetastore. This provides multi-tenancy to the hive metastore.
  *
@@ -62,7 +62,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
     private int nextSerialNum;
     private final Registry registry;
 
-    private ThreadLocal<Integer> threadLocalId = new ThreadLocal<Integer>() {
+    private ThreadLocal<Integer> threadLocalId = new ThreadLocal<>() {
         @Override
         protected synchronized Integer initialValue() {
             return nextSerialNum++;
@@ -70,7 +70,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
     };
 
     private final ThreadLocal<RawStore> threadLocalMS =
-            new ThreadLocal<RawStore>() {
+            new ThreadLocal<>() {
                 @Override
                 protected synchronized RawStore initialValue() {
                     return null;
@@ -78,7 +78,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
             };
 
     private final ThreadLocal<Configuration> threadLocalConf =
-            new ThreadLocal<Configuration>() {
+            new ThreadLocal<>() {
                 @Override
                 protected synchronized Configuration initialValue() {
                     return null;
@@ -271,7 +271,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
                                        final List<List<String>> dropParts, final boolean deleteData)
             throws NoSuchObjectException, MetaException, TException {
         startFunction("add_drop_partitions : db=" + databaseName + " tbl=" + tableName);
-        if (addParts.size() == 0 && dropParts.size() == 0) {
+        if (addParts.isEmpty() && dropParts.isEmpty()) {
             return true;
         }
         for (List<String> partVals : dropParts) {
@@ -314,8 +314,8 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
         boolean success = false;
         Table tbl = null;
         // Ensures that the list doesn't have dups, and keeps track of directories we have created.
-        final Map<PartValEqWrapper, Boolean> addedPartitions = new HashMap<PartValEqWrapper, Boolean>();
-        final List<Partition> existingParts = new ArrayList<Partition>();
+        final Map<PartValEqWrapper, Boolean> addedPartitions = new HashMap<>();
+        final List<Partition> existingParts = new ArrayList<>();
         List<Partition> result = null;
         try {
             ms.openTransaction();
@@ -439,7 +439,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
         final String inheritProps = getHiveConf().getVar(HiveConf.ConfVars.METASTORE_PART_INHERIT_TBL_PROPS).trim();
         // Default value is empty string in which case no properties will be inherited.
         // * implies all properties needs to be inherited
-        Set<String> inheritKeys = new HashSet<String>(Arrays.asList(inheritProps.split(",")));
+        Set<String> inheritKeys = new HashSet<>(Arrays.asList(inheritProps.split(",")));
         if (inheritKeys.contains("*")) {
             inheritKeys = tblParams.keySet();
         }
@@ -459,7 +459,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
         logInfo("add_partitions");
         final String dbName = tbl.getDbName();
         final String tblName = tbl.getTableName();
-        final List<Partition> result = new ArrayList<Partition>();
+        final List<Partition> result = new ArrayList<>();
         for (Partition part : parts) {
             if (!part.getTableName().equals(tblName) || !part.getDbName().equals(dbName)) {
                 throw new MetaException("Partition does not belong to target table "
@@ -487,7 +487,7 @@ public class MetacatHMSHandler extends HiveMetaStore.HMSHandler implements IMeta
     private List<Partition> dropPartitionsCoreNoTxn(
             final RawStore ms, final Table tbl, final List<List<String>> partsValues)
             throws MetaException, NoSuchObjectException, InvalidObjectException, InvalidInputException {
-        final List<Partition> deletedPartitions = new ArrayList<Partition>();
+        final List<Partition> deletedPartitions = new ArrayList<>();
         Partition part = null;
         final String dbName = tbl.getDbName();
         final String tblName = tbl.getTableName();

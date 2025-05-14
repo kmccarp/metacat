@@ -13,6 +13,12 @@
 
 package com.netflix.metacat.main.services;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -29,12 +35,6 @@ import com.netflix.spectator.api.Registry;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Metadata Service. This class includes any common services for the user metadata.
@@ -95,7 +95,7 @@ public class MetadataService {
                 final List<String> urisToDelete =
                     userMetadataService.getDeletedDataMetadataUris(priorTo.toDate(), 0, limit);
                 log.info("Count of deleted marked data metadata: {}", urisToDelete.size());
-                if (urisToDelete.size() > 0) {
+                if (!urisToDelete.isEmpty()) {
                     final List<String> uris = urisToDelete.parallelStream().filter(uri -> !uri.contains("="))
                         .map(userMetadataService::getDescendantDataUris)
                         .flatMap(Collection::stream).collect(Collectors.toList());
@@ -118,7 +118,7 @@ public class MetadataService {
                                 }));
                         final List<String> canDeleteMetadataForUris = subUris.parallelStream()
                             .filter(s -> !Strings.isNullOrEmpty(s))
-                            .filter(s -> uriQualifiedNames.get(s) == null || uriQualifiedNames.get(s).size() == 0)
+                            .filter(s -> uriQualifiedNames.get(s) == null || uriQualifiedNames.get(s).isEmpty())
                             .collect(Collectors.toList());
                         log.info("Start deleting data metadata: {}", canDeleteMetadataForUris.size());
                         userMetadataService.deleteDataMetadata(canDeleteMetadataForUris);

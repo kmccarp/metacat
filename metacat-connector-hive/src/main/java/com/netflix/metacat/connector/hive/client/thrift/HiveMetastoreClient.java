@@ -16,11 +16,11 @@
 
 package com.netflix.metacat.connector.hive.client.thrift;
 
+import java.io.Closeable;
+
 import org.apache.hadoop.hive.metastore.api.ThriftHiveMetastore;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.transport.TTransport;
-
-import java.io.Closeable;
 
 /**
  * HiveMetastoreClient.

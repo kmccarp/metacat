@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.google.common.collect.ImmutableList;
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.common.type.ArrayType;
@@ -28,10 +32,6 @@ import com.netflix.metacat.common.type.Type;
 import com.netflix.metacat.common.type.VarbinaryType;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Data type converter for Cassandra.

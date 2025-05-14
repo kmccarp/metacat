@@ -17,11 +17,11 @@
  */
 package com.netflix.metacat.common.server.connectors;
 
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.server.connectors.model.TableInfo;
-
 import java.util.List;
 import java.util.Map;
+
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.server.connectors.model.TableInfo;
 
 /**
  * Service interface for connector to implement and expose Table related metadata.

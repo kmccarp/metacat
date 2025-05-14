@@ -19,4 +19,5 @@
 
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.main.services.search;
+
 import javax.annotation.ParametersAreNonnullByDefault;

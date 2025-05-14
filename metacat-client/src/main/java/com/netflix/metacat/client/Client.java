@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.client;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSocketFactory;
+import java.util.concurrent.TimeUnit;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.guava.GuavaModule;
 import com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule;
@@ -39,10 +43,6 @@ import feign.Retryer;
 import feign.jaxrs.JAXRSContract;
 import feign.slf4j.Slf4jLogger;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSocketFactory;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Client to communicate with Metacat.  This version depends on the Feign library.

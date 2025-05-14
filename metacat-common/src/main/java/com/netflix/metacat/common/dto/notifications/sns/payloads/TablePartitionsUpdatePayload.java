@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.dto.notifications.sns.payloads;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Information about how the partitions have changed when a table was updated.

@@ -16,6 +16,10 @@
 
 package com.netflix.metacat.connector.hive;
 
+import javax.annotation.Nullable;
+import java.util.Comparator;
+import java.util.List;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
@@ -37,10 +41,6 @@ import org.apache.hadoop.hive.metastore.api.InvalidOperationException;
 import org.apache.hadoop.hive.metastore.api.MetaException;
 import org.apache.hadoop.hive.metastore.api.NoSuchObjectException;
 import org.apache.thrift.TException;
-
-import javax.annotation.Nullable;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * HiveConnectorDatabaseService.
@@ -171,7 +171,7 @@ public class HiveConnectorDatabaseService implements ConnectorDatabaseService {
     ) {
         try {
             final List<QualifiedName> qualifiedNames = Lists.newArrayList();
-            final String databaseFilter = (prefix != null) ? prefix.getDatabaseName() : null;
+            final String databaseFilter = prefix != null ? prefix.getDatabaseName() : null;
             for (String databaseName : metacatHiveClient.getAllDatabases()) {
                 final QualifiedName qualifiedName = QualifiedName.ofDatabase(name.getCatalogName(), databaseName);
                 if (databaseFilter != null && !databaseName.startsWith(databaseFilter)) {

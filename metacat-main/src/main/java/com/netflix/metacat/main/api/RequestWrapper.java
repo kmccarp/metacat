@@ -17,6 +17,12 @@
  */
 package com.netflix.metacat.main.api;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Supplier;
+
 import com.google.common.base.Throwables;
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -49,13 +55,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import jakarta.validation.constraints.NotNull;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 
 /**
  * Request wrapper.

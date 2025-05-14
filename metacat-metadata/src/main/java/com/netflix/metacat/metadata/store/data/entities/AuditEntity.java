@@ -1,5 +1,7 @@
 package com.netflix.metacat.metadata.store.data.entities;
 
+import java.time.Instant;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,11 +12,9 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
-
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import java.time.Instant;
 
 /**
  * Embeddable entity with audit fields.

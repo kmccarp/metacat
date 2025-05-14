@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.Map;
 
 /**
  * Database information.

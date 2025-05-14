@@ -19,4 +19,5 @@
 
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.common.server.connectors.exception;
+
 import javax.annotation.ParametersAreNonnullByDefault;

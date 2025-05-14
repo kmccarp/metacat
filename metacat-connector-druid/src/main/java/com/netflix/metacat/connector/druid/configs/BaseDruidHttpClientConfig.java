@@ -1,5 +1,7 @@
 package com.netflix.metacat.connector.druid.configs;
 
+import java.util.concurrent.TimeUnit;
+
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.connectors.util.TimeUtil;
 import com.netflix.metacat.connector.druid.DruidConfigConstants;
@@ -11,8 +13,6 @@ import org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * BaseDruidHttpClientConfig.

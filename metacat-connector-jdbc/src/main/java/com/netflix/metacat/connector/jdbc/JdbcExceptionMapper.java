@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.connector.jdbc;
 
+import javax.annotation.Nonnull;
+import java.sql.SQLException;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.ConnectorException;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.sql.SQLException;
 
 /**
  * An interface to map JDBC SQLExceptions to Metacat Connector Exceptions.

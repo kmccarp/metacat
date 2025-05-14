@@ -17,15 +17,15 @@
  */
 package com.netflix.metacat.common.server.connectors;
 
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.model.PartitionInfo;
 import com.netflix.metacat.common.server.connectors.model.PartitionListRequest;
 import com.netflix.metacat.common.server.connectors.model.PartitionsSaveRequest;
 import com.netflix.metacat.common.server.connectors.model.PartitionsSaveResponse;
 import com.netflix.metacat.common.server.connectors.model.TableInfo;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * Interfaces for manipulating partition information for this connector.

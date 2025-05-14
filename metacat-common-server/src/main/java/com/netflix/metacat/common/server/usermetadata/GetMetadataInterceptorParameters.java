@@ -17,10 +17,10 @@
 
 package com.netflix.metacat.common.server.usermetadata;
 
+import java.util.Optional;
+
 import com.netflix.metacat.common.dto.HasMetadata;
 import lombok.Builder;
-
-import java.util.Optional;
 
 /**
  * Get definition metadata parameters.

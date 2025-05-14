@@ -17,6 +17,16 @@
  */
 package com.netflix.metacat.connector.mysql;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Locale;
+
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 import com.netflix.metacat.common.QualifiedName;
@@ -29,16 +39,6 @@ import com.netflix.metacat.connector.jdbc.services.JdbcConnectorUtils;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
 
 /**
  * MySql specific extension of the JdbcConnectorDatabaseService implementation for any differences from default.
@@ -86,7 +86,7 @@ public class MySqlConnectorDatabaseService extends JdbcConnectorDatabaseService 
             while (schemas.next()) {
                 final String schemaName = schemas.getString("TABLE_CAT").toLowerCase(Locale.ENGLISH);
                 // skip internal schemas
-                if (!schemaName.equals("information_schema") && !schemaName.equals("mysql")) {
+                if (!"information_schema".equals(schemaName) && !"mysql".equals(schemaName)) {
                     if (prefix == null) {
                         names.add(QualifiedName.ofDatabase(name.getCatalogName(), schemaName));
                     } else if (StringUtils.isNotBlank(prefix.getDatabaseName())

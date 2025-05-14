@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.main.services.notifications.sns;
 
+import javax.annotation.Nullable;
+import java.util.UUID;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.amazonaws.services.sns.AmazonSNS;
 import com.amazonaws.services.sns.model.PublishResult;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -51,11 +55,7 @@ import com.netflix.metacat.main.configs.SNSNotificationsConfig;
 import com.netflix.metacat.main.services.notifications.NotificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
-
-import javax.annotation.Nullable;
 import jakarta.validation.constraints.Size;
-import java.util.UUID;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Implementation of the NotificationService using Amazon SNS.

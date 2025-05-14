@@ -1,5 +1,10 @@
 package com.netflix.metacat.connector.polaris;
 
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
@@ -18,11 +23,6 @@ import com.netflix.metacat.connector.polaris.store.PolarisStoreService;
 import com.netflix.metacat.connector.polaris.store.entities.PolarisDatabaseEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * database service for polaris connector.
@@ -194,7 +194,7 @@ public class PolarisConnectorDatabaseService implements ConnectorDatabaseService
             );
 
             return ConnectorUtils.paginate(dbs, pageable).stream()
-                .map(d -> mapper.toInfo(d)).collect(Collectors.toList());
+                .map(mapper::toInfo).collect(Collectors.toList());
         } catch (Exception exception) {
             throw new ConnectorException(
                 String.format("Failed databases list polaris prefix %s", prefix), exception);

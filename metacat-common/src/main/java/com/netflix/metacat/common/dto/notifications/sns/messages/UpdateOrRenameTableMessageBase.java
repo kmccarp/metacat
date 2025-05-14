@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.dto.notifications.sns.messages;
 
+import javax.annotation.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.netflix.metacat.common.dto.TableDto;
@@ -26,8 +28,6 @@ import com.netflix.metacat.common.dto.notifications.sns.payloads.UpdatePayload;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
-import javax.annotation.Nullable;
 
 /**
  * Base message type for Update and Rename messages.
@@ -50,7 +50,7 @@ public abstract class UpdateOrRenameTableMessageBase extends SNSMessage<UpdatePa
      * @param messageType Whether this is an Update or Rename message
      */
     @JsonCreator
-    public UpdateOrRenameTableMessageBase(
+    protected UpdateOrRenameTableMessageBase(
         @JsonProperty("id") final String id,
         @JsonProperty("timestamp") final long timestamp,
         @JsonProperty("requestId") final String requestId,

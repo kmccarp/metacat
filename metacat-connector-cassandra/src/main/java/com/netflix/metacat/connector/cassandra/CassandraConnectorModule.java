@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Map;
+
 import com.datastax.driver.core.Cluster;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.AbstractModule;
@@ -28,11 +33,6 @@ import com.netflix.metacat.common.server.connectors.ConnectorPartitionService;
 import com.netflix.metacat.common.server.connectors.ConnectorTableService;
 import com.netflix.metacat.common.server.connectors.ConnectorUtils;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
-import java.util.Map;
 
 /**
  * A Guice Module for the CassandraConnector.

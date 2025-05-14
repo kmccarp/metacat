@@ -13,19 +13,19 @@
 
 package com.netflix.metacat.connector.s3.dao.impl;
 
+import java.util.List;
+
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.connector.s3.dao.PartitionDao;
 import com.netflix.metacat.connector.s3.model.Partition;
-
 import jakarta.inject.Inject;
 import jakarta.inject.Provider;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
-import java.util.List;
 
 /**
  * Partition DAO impl.

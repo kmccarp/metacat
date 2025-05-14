@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.common.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
  * Partition get request.

@@ -14,6 +14,22 @@
 
 package com.netflix.metacat.main.services.search;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Functions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
@@ -55,22 +71,6 @@ import com.netflix.spectator.api.Registry;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.Instant;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 /**
  * This class does a refresh of all the metadata entities from original data sources to elastic search.
@@ -614,7 +614,7 @@ public class ElasticSearchRefresh {
     private ListenableFuture<Void> indexDatabaseDtos(final QualifiedName catalogName, final List<DatabaseDto> dtos) {
         return esService.submit(() -> {
             final List<ElasticSearchDoc> docs = dtos.stream()
-                .filter(dto -> dto != null)
+                .filter(Objects::nonNull)
                 .map(dto -> new ElasticSearchDoc(dto.getName().toString(), dto, "admin", false, refreshMarkerText))
                 .collect(Collectors.toList());
             log.info("Saving databases for catalog: {}", catalogName);
@@ -693,7 +693,7 @@ public class ElasticSearchRefresh {
      */
     private ListenableFuture<Void> indexPartitionDtos(final QualifiedName tableName, final List<PartitionDto> dtos) {
         return esService.submit(() -> {
-            final List<ElasticSearchDoc> docs = dtos.stream().filter(dto -> dto != null).map(
+            final List<ElasticSearchDoc> docs = dtos.stream().filter(Objects::nonNull).map(
                 dto -> {
                     final String userName = dto.getAudit() != null ? dto.getAudit().getCreatedBy() : "admin";
                     return new ElasticSearchDoc(dto.getName().toString(), dto, userName, false, refreshMarkerText);

@@ -1,5 +1,7 @@
 package com.netflix.metacat.connector.polaris.store.repos;
 
+import java.util.Optional;
+
 import com.netflix.metacat.connector.polaris.store.entities.PolarisDatabaseEntity;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
@@ -10,8 +12,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 /**
  * JPA repository implementation for storing PolarisDatabaseEntity.

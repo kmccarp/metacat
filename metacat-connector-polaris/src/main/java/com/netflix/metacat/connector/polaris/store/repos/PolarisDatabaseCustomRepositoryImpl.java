@@ -1,5 +1,10 @@
 package com.netflix.metacat.connector.polaris.store.repos;
 
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import com.netflix.metacat.common.dto.SortOrder;
 import com.netflix.metacat.connector.polaris.store.entities.PolarisDatabaseEntity;
 import org.springframework.data.domain.Sort;
@@ -8,14 +13,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Slice;
 import org.springframework.data.domain.SliceImpl;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Nullable;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Implementation for Custom JPA repository implementation for interacting with PolarisDatabaseEntity.

@@ -13,6 +13,10 @@
 
 package com.netflix.metacat.connector.hive.configs;
 
+import javax.sql.DataSource;
+import java.net.URI;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.util.DataSourceManager;
@@ -36,10 +40,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-
-import javax.sql.DataSource;
-import java.net.URI;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Hive configs.

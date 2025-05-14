@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+import java.util.Map;
+
 import com.datastax.driver.core.Cluster;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.server.connectors.DefaultConnectorFactory;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.util.Map;
 
 /**
  * Cassandra implementation of a connector factory.

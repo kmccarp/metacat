@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
 import com.netflix.metacat.common.type.Type;
 import com.netflix.metacat.common.type.TypeRegistry;
 import com.netflix.metacat.common.type.TypeSignature;
@@ -27,11 +32,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
-
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 /**
  * Field DTO.
@@ -74,7 +74,7 @@ public final class FieldInfo implements Serializable {
             final String signatureString = (String) oSignature;
             if (StringUtils.isNotBlank(signatureString)) {
                 final TypeSignature signature = TypeSignature.parseTypeSignature(signatureString);
-                this.setType((TypeRegistry.getTypeRegistry().getType(signature)));
+                this.setType(TypeRegistry.getTypeRegistry().getType(signature));
             }
         }
     }

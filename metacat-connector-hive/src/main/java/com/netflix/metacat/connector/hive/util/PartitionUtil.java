@@ -15,6 +15,10 @@
  */
 package com.netflix.metacat.connector.hive.util;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+
 import com.google.common.base.Strings;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.InvalidMetaException;
@@ -24,10 +28,6 @@ import org.apache.hadoop.hive.metastore.Warehouse;
 import org.apache.hadoop.hive.metastore.api.FieldSchema;
 import org.apache.hadoop.hive.metastore.api.MetaException;
 import org.apache.hadoop.hive.metastore.api.Table;
-
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
 
 /**
  * Utility class for partitions.

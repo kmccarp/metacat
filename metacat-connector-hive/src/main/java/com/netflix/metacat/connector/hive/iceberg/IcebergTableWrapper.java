@@ -16,10 +16,10 @@
 
 package com.netflix.metacat.connector.hive.iceberg;
 
+import java.util.Map;
+
 import org.apache.iceberg.Table;
 import lombok.Data;
-
-import java.util.Map;
 
 /**
  * This class represents the iceberg table.

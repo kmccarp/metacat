@@ -17,10 +17,10 @@
  */
 package com.netflix.metacat.common.server.connectors.exception;
 
+import javax.annotation.Nullable;
+
 import com.netflix.metacat.common.QualifiedName;
 import lombok.Getter;
-
-import javax.annotation.Nullable;
 
 /**
  * Exception when partition is not found.

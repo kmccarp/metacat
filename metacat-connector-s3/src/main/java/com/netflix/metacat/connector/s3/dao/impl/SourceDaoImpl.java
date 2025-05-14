@@ -13,24 +13,24 @@
 
 package com.netflix.metacat.connector.s3.dao.impl;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.netflix.metacat.common.server.connectors.exception.CatalogNotFoundException;
 import com.netflix.metacat.connector.s3.dao.SourceDao;
 import com.netflix.metacat.connector.s3.model.Source;
-
 import jakarta.inject.Inject;
 import jakarta.inject.Provider;
 import jakarta.persistence.EntityManager;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Source DAO impl.
  */
 public class SourceDaoImpl extends IdEntityDaoImpl<Source> implements SourceDao {
-    private LoadingCache<String, Source> sourceCache = CacheBuilder.newBuilder().expireAfterWrite(120, TimeUnit.MINUTES)
+    private final LoadingCache<String, Source> sourceCache = CacheBuilder.newBuilder().expireAfterWrite(120, TimeUnit.MINUTES)
         .build(
             new CacheLoader<String, Source>() {
                 @Override

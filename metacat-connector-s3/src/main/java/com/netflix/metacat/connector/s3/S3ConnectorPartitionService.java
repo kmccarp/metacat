@@ -17,6 +17,15 @@
  */
 package com.netflix.metacat.connector.s3;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.StringReader;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -45,17 +54,8 @@ import com.netflix.metacat.connector.s3.dao.TableDao;
 import com.netflix.metacat.connector.s3.model.Partition;
 import com.netflix.metacat.connector.s3.model.Table;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import java.io.StringReader;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * S3 Connector implementation for partitions.

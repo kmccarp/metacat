@@ -16,6 +16,9 @@
 
 package com.netflix.metacat.connector.hive;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.connectors.ConnectorDatabaseService;
 import com.netflix.metacat.common.server.connectors.ConnectorPartitionService;
@@ -29,9 +32,6 @@ import com.netflix.metacat.connector.hive.converters.HiveConnectorInfoConverter;
 import com.netflix.metacat.connector.hive.util.HiveConfigConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.env.MapPropertySource;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * HiveConnectorFactory.

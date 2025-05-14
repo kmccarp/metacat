@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.client.module;
 
+import java.io.IOException;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.base.Strings;
 import com.netflix.metacat.common.exception.MetacatAlreadyExistsException;
@@ -33,11 +38,6 @@ import feign.Response;
 import feign.RetryableException;
 import feign.Util;
 import lombok.AllArgsConstructor;
-
-import java.io.IOException;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
 
 /**
  * Module that provides a error decoder, used to parse errors.

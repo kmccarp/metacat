@@ -16,6 +16,16 @@
  */
 package com.netflix.metacat.thrift;
 
+import javax.annotation.Nullable;
+import java.time.Instant;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.annotations.VisibleForTesting;
@@ -42,16 +52,6 @@ import org.apache.hadoop.hive.metastore.api.SerDeInfo;
 import org.apache.hadoop.hive.metastore.api.SkewedInfo;
 import org.apache.hadoop.hive.metastore.api.StorageDescriptor;
 import org.apache.hadoop.hive.metastore.api.Table;
-
-import javax.annotation.Nullable;
-import java.time.Instant;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Hive converter.
@@ -164,7 +164,7 @@ public class HiveConvertersImpl implements HiveConverters {
 
         Map<String, String> metadata = dto.getMetadata();
         if (metadata == null) {
-            metadata = Collections.EMPTY_MAP;
+            metadata = Collections.emptyMap();
         }
         database.setParameters(metadata);
 

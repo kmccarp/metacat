@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.converter;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
 import com.netflix.metacat.common.type.Type;
 import com.netflix.metacat.common.type.TypeRegistry;
 import com.netflix.metacat.common.type.TypeSignature;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * Default type converter. Converter for metacat type representations.

@@ -17,6 +17,17 @@
  */
 package com.netflix.metacat.connector.jdbc.services;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLDataException;
+import java.sql.SQLException;
+import java.util.Comparator;
+import java.util.List;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.inject.Inject;
@@ -36,17 +47,6 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLDataException;
-import java.sql.SQLException;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * Generic JDBC implementation of the ConnectorTableService.
@@ -125,7 +125,7 @@ public class JdbcConnectorTableService implements ConnectorTableService {
                         .sourceType(sourceType)
                         .type(this.typeConverter.toMetacatType(sourceType))
                         .comment(columns.getString("REMARKS"))
-                        .isNullable(columns.getString("IS_NULLABLE").equals("YES"))
+                        .isNullable("YES".equals(columns.getString("IS_NULLABLE")))
                         .defaultValue(columns.getString("COLUMN_DEF"));
 
                     if (size != null) {

@@ -16,6 +16,16 @@
 
 package com.netflix.metacat.connector.hive.client.thrift;
 
+import javax.annotation.Nullable;
+import java.net.URI;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 import com.netflix.metacat.common.server.connectors.exception.InvalidMetaException;
@@ -34,16 +44,6 @@ import org.apache.hadoop.hive.metastore.api.Table;
 import org.apache.thrift.TException;
 import org.apache.thrift.transport.TTransportException;
 
-import javax.annotation.Nullable;
-import java.net.URI;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
-
 /**
  * MetacatHiveClient.
  *
@@ -52,7 +52,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class MetacatHiveClient implements IMetacatHiveClient {
     private static final short ALL_RESULTS = -1;
-    private HiveMetastoreClientFactory hiveMetastoreClientFactory;
+    private final HiveMetastoreClientFactory hiveMetastoreClientFactory;
     private final String host;
     private final int port;
     private final Registry registry;
@@ -316,9 +316,7 @@ public class MetacatHiveClient implements IMetacatHiveClient {
     @Override
     public int getPartitionCount(final String databaseName,
                                  final String tableName) throws TException {
-        return callWrap(HiveMetrics.TagGetPartitionCount.getMetricName(), () -> {
-            return getPartitions(databaseName, tableName, null).size();
-        });
+        return callWrap(HiveMetrics.TagGetPartitionCount.getMetricName(), () -> getPartitions(databaseName, tableName, null).size());
     }
 
     /**
@@ -402,7 +400,7 @@ public class MetacatHiveClient implements IMetacatHiveClient {
 
     private <R> R callWrap(final String requestName, final Callable<R> supplier) throws TException {
         final long start = registry.clock().wallTime();
-        final Map<String, String> tags = new HashMap<String, String>();
+        final Map<String, String> tags = new HashMap<>();
         tags.put("request", requestName);
 
         try {

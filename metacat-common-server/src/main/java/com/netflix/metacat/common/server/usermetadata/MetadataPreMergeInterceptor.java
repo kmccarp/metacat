@@ -1,10 +1,10 @@
 package com.netflix.metacat.common.server.usermetadata;
 
+import java.util.Optional;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.InvalidMetadataException;
-
-import java.util.Optional;
 
 /**
  * MetadataPreMergeInterceptor: This interceptor runs before merging the existing metadata and the new metadata.

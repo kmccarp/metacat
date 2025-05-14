@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.dto.notifications.sns;
 
+import javax.annotation.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.netflix.metacat.common.dto.BaseDto;
@@ -25,8 +27,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.ToString;
-
-import javax.annotation.Nullable;
 
 /**
  * Base SNS notification DTO with shared fields.

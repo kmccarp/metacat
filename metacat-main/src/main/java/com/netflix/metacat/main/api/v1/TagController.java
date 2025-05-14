@@ -15,6 +15,13 @@
  */
 package com.netflix.metacat.main.api.v1;
 
+import javax.annotation.Nullable;
+import java.beans.PropertyEditorSupport;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.TableDto;
@@ -53,13 +60,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Nullable;
-import java.beans.PropertyEditorSupport;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 /**
  * Tag API implementation.

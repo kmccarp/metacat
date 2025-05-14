@@ -13,18 +13,18 @@
 
 package com.netflix.metacat.metadata.mysql;
 
-import com.google.common.collect.Sets;
-import com.netflix.metacat.common.server.usermetadata.UserMetadataService;
-import com.netflix.metacat.common.server.util.DataSourceManager;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import javax.sql.DataSource;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.FileSystems;
 import java.util.Properties;
 import java.util.Set;
+
+import com.google.common.collect.Sets;
+import com.netflix.metacat.common.server.usermetadata.UserMetadataService;
+import com.netflix.metacat.common.server.util.DataSourceManager;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  * MySqlServiceUtil.

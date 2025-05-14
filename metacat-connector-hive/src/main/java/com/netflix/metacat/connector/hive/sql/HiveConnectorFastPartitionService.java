@@ -15,6 +15,13 @@
  */
 package com.netflix.metacat.connector.hive.sql;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
@@ -41,13 +48,6 @@ import org.apache.hadoop.hive.metastore.Warehouse;
 import org.apache.hadoop.hive.metastore.api.SerDeInfo;
 import org.apache.hadoop.hive.metastore.api.StorageDescriptor;
 import org.apache.hadoop.hive.metastore.api.Table;
-
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * HiveConnectorFastPartitionService.

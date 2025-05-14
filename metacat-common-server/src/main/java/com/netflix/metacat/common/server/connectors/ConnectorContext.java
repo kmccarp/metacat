@@ -13,6 +13,10 @@
 
 package com.netflix.metacat.common.server.connectors;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.server.properties.Config;
 import com.netflix.spectator.api.Registry;
 import lombok.AccessLevel;
@@ -20,10 +24,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.context.ApplicationContext;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Connector Config.

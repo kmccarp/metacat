@@ -22,4 +22,5 @@
  */
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.connector.hive.client.thrift;
+
 import javax.annotation.ParametersAreNonnullByDefault;

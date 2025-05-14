@@ -1,5 +1,8 @@
 package com.netflix.metacat.connector.hive.iceberg;
 
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.exception.MetacatNotSupportedException;
 import org.apache.iceberg.BaseMetastoreCatalog;
 import org.apache.iceberg.PartitionSpec;
@@ -10,15 +13,12 @@ import org.apache.iceberg.Transaction;
 import org.apache.iceberg.catalog.Namespace;
 import org.apache.iceberg.catalog.TableIdentifier;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * Implemented BaseMetastoreTables to interact with iceberg library.
  * Load an iceberg table from a location.
  */
 public final class IcebergMetastoreTables extends BaseMetastoreCatalog {
-    private IcebergTableOps tableOperations;
+    private final IcebergTableOps tableOperations;
 
     IcebergMetastoreTables(final IcebergTableOps tableOperations) {
         this.tableOperations = tableOperations;

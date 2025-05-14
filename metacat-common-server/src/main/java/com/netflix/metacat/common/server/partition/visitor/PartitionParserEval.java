@@ -13,6 +13,11 @@
 
 package com.netflix.metacat.common.server.partition.visitor;
 
+import java.math.BigDecimal;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.server.partition.parser.ASTAND;
@@ -38,11 +43,6 @@ import com.netflix.metacat.common.server.partition.parser.ASTVAR;
 import com.netflix.metacat.common.server.partition.parser.PartitionParserVisitor;
 import com.netflix.metacat.common.server.partition.parser.SimpleNode;
 import com.netflix.metacat.common.server.partition.parser.Variable;
-
-import java.math.BigDecimal;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Partition Expression Visitor.

@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.server.events;
 
+import java.util.Map;
+
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.server.properties.MetacatProperties;
 import com.netflix.metacat.common.server.util.RegistryUtil;
@@ -27,8 +29,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ApplicationEventMulticaster;
 import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-
-import java.util.Map;
 
 /**
  * Event bus implementation using Springs Event Multicaster. By default, Spring supports synchronous event publishing.

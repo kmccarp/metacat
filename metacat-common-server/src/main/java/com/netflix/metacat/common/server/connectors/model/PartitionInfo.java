@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.util.Map;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.QualifiedName;
 import lombok.AllArgsConstructor;
@@ -24,8 +26,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.Map;
 
 /**
  * Partition DTO.

@@ -13,6 +13,12 @@
 
 package com.netflix.metacat.connector.hive.converters;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
@@ -44,12 +50,6 @@ import org.apache.hadoop.hive.serde2.typeinfo.TypeInfoUtils;
 import org.apache.iceberg.PartitionField;
 import org.apache.iceberg.Schema;
 import org.apache.iceberg.types.Types;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * Class to convert hive to canonical type and vice versa.
@@ -112,7 +112,7 @@ public class HiveTypeConverter implements ConnectorTypeConverter {
                                                      final List<PartitionField> partitionFields) {
         final List<FieldInfo> fields = Lists.newArrayList();
         final List<String> partitionNames = partitionFields.stream()
-            .filter(f -> f.transform() != null && !f.transform().toString().equalsIgnoreCase("void"))
+            .filter(f -> f.transform() != null && !"void".equalsIgnoreCase(f.transform().toString()))
             .map(f -> schema.findField(f.sourceId()).name())
             .collect(Collectors.toList());
 
@@ -168,9 +168,7 @@ public class HiveTypeConverter implements ConnectorTypeConverter {
                 return String.format("decimal(%s,%s)", decimalType.precision(), decimalType.scale());
             case STRUCT:
                 final Types.StructType structType = type.asStructType();
-                final String nameToType = (String) structType.fields().stream().map((f) -> {
-                    return String.format("%s:%s", f.name(), fromIcebergToHiveType(f.type()));
-                }).collect(Collectors.joining(","));
+                final String nameToType = (String) structType.fields().stream().map(f -> String.format("%s:%s", f.name(), fromIcebergToHiveType(f.type()))).collect(Collectors.joining(","));
                 return String.format("struct<%s>", nameToType);
             case LIST:
                 final Types.ListType listType = type.asListType();

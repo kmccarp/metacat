@@ -16,11 +16,6 @@
 
 package com.netflix.metacat.connector.hive.client.thrift;
 
-import com.google.common.net.HostAndPort;
-import org.apache.thrift.transport.TSocket;
-import org.apache.thrift.transport.TTransport;
-import org.apache.thrift.transport.TTransportException;
-
 import javax.annotation.Nullable;
 import java.io.Closeable;
 import java.io.IOException;
@@ -28,6 +23,11 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.Socket;
 import java.net.SocketAddress;
+
+import com.google.common.net.HostAndPort;
+import org.apache.thrift.transport.TSocket;
+import org.apache.thrift.transport.TTransport;
+import org.apache.thrift.transport.TTransportException;
 
 /**
  * HiveMetastoreClientFactory.

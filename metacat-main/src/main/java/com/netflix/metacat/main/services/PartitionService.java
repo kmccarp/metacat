@@ -14,6 +14,10 @@
 
 package com.netflix.metacat.main.services;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.GetPartitionsRequestDto;
 import com.netflix.metacat.common.dto.Pageable;
@@ -21,10 +25,6 @@ import com.netflix.metacat.common.dto.PartitionDto;
 import com.netflix.metacat.common.dto.PartitionsSaveRequestDto;
 import com.netflix.metacat.common.dto.PartitionsSaveResponseDto;
 import com.netflix.metacat.common.dto.Sort;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Partition service.

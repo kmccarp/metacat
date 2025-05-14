@@ -15,6 +15,11 @@
  */
 package com.netflix.metacat.connector.hive.util;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
 import com.google.common.base.Preconditions;
 import com.google.common.base.Throwables;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -38,11 +43,6 @@ import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.StructField;
 import org.apache.hadoop.hive.serde2.objectinspector.StructObjectInspector;
 import org.apache.iceberg.catalog.TableIdentifier;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
 
 /**
  * HiveTableUtil.

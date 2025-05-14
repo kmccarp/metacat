@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.main.services.search;
 
+import java.time.Instant;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -21,8 +23,6 @@ import com.netflix.metacat.common.dto.DatabaseDto;
 import com.netflix.metacat.common.dto.PartitionDto;
 import com.netflix.metacat.common.dto.TableDto;
 import lombok.Getter;
-
-import java.time.Instant;
 
 /**
  * Document that gets stored in elastic search.

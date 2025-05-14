@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.main.configs;
 
+import java.util.Map;
+
 import com.netflix.metacat.main.api.ApiFilter;
 import com.netflix.metacat.main.api.MetacatErrorController;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -31,8 +33,6 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import java.util.Map;
 
 /**
  * Spring configuration for the API tier.

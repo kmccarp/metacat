@@ -15,6 +15,13 @@
  */
 package com.netflix.metacat.connector.hive.sql;
 
+import java.sql.Types;
+import java.time.Instant;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
@@ -36,13 +43,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.Types;
-import java.time.Instant;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * This class makes direct sql calls to save hive partitions.

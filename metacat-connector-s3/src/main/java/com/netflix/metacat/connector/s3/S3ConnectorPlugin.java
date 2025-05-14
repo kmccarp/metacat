@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.connector.s3;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.connectors.ConnectorFactory;
 import com.netflix.metacat.common.server.connectors.ConnectorInfoConverter;
 import com.netflix.metacat.common.server.connectors.ConnectorPlugin;
@@ -21,8 +23,6 @@ import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.type.TypeRegistry;
 import com.netflix.metacat.connector.pig.converters.PigTypeConverter;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * S3 plugin.

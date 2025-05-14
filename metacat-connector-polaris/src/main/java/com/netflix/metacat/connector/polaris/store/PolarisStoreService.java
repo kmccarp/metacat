@@ -1,12 +1,12 @@
 package com.netflix.metacat.connector.polaris.store;
 
-import com.netflix.metacat.common.dto.Sort;
-import com.netflix.metacat.connector.polaris.store.entities.PolarisDatabaseEntity;
-import com.netflix.metacat.connector.polaris.store.entities.PolarisTableEntity;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import com.netflix.metacat.common.dto.Sort;
+import com.netflix.metacat.connector.polaris.store.entities.PolarisDatabaseEntity;
+import com.netflix.metacat.connector.polaris.store.entities.PolarisTableEntity;
 
 /**
  * Interface methods for Polaris Store CRUD access.

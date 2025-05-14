@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.common.type;
 
+import javax.annotation.Nonnull;
+import java.util.Collections;
+import java.util.List;
+
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -25,10 +29,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
-
-import javax.annotation.Nonnull;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Row type.

@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.util.List;
+
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
  * Partition get request.

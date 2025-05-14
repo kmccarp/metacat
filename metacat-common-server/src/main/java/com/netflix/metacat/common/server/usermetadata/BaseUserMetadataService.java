@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.common.server.usermetadata;
 
+import java.util.Optional;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.dto.HasDataMetadata;
 import com.netflix.metacat.common.dto.HasDefinitionMetadata;
 import com.netflix.metacat.common.dto.HasMetadata;
-
-import java.util.Optional;
 
 /**
  * Base class for UserMetadataService.

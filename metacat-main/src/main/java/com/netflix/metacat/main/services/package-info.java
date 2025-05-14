@@ -23,4 +23,5 @@
  */
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.main.services;
+
 import javax.annotation.ParametersAreNonnullByDefault;

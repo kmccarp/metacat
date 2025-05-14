@@ -17,6 +17,9 @@
  */
 package com.netflix.metacat.connector.redshift;
 
+import javax.sql.DataSource;
+import java.util.Map;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
 import com.netflix.metacat.common.server.connectors.ConnectorDatabaseService;
@@ -28,9 +31,6 @@ import com.netflix.metacat.connector.jdbc.JdbcExceptionMapper;
 import com.netflix.metacat.connector.jdbc.JdbcTypeConverter;
 import com.netflix.metacat.connector.jdbc.services.JdbcConnectorDatabaseService;
 import com.netflix.metacat.connector.jdbc.services.JdbcConnectorPartitionService;
-
-import javax.sql.DataSource;
-import java.util.Map;
 
 /**
  * Guice module for the Redshift Connector.

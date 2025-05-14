@@ -17,17 +17,6 @@
 
 package com.netflix.metacat.main.services.notifications.sns;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.google.common.annotations.VisibleForTesting;
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.dto.PartitionDto;
-import com.netflix.metacat.common.dto.notifications.sns.payloads.TablePartitionsUpdatePayload;
-import com.netflix.metacat.common.server.events.MetacatEvent;
-import com.netflix.metacat.common.server.partition.util.PartitionUtil;
-import com.netflix.metacat.common.server.usermetadata.UserMetadataService;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,6 +34,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.common.annotations.VisibleForTesting;
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.dto.PartitionDto;
+import com.netflix.metacat.common.dto.notifications.sns.payloads.TablePartitionsUpdatePayload;
+import com.netflix.metacat.common.server.events.MetacatEvent;
+import com.netflix.metacat.common.server.partition.util.PartitionUtil;
+import com.netflix.metacat.common.server.usermetadata.UserMetadataService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
+
 /**
  * The util class for SNS Notification service.
  *
@@ -55,7 +55,7 @@ import java.util.stream.Collectors;
 public final class SNSNotificationServiceUtil {
     private static final String PARTITION_COLUMN_DATA_TYPE_PATH = "/data_dependency/partition_column_date_type";
     private static final String DELETION_COLUMN_PATH = "/data_hygiene/delete_column";
-    private static final Set<String> PST_TIME = new HashSet<String>(Arrays.asList("region", "pacific"));
+    private static final Set<String> PST_TIME = new HashSet<>(Arrays.asList("region", "pacific"));
     //Timestamp in seconds: 1522257960 or 1367992474.293378
     //Timestamp in milliseconds: 1522257960000 or 1367992474000.293378
     //ISO basic date format: 20180101

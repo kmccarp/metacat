@@ -17,11 +17,11 @@
 
 package com.netflix.metacat.common.server.usermetadata;
 
+import javax.annotation.Nullable;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.InvalidMetadataException;
-
-import javax.annotation.Nullable;
 
 
 /**

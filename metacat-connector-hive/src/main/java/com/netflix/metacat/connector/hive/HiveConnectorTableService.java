@@ -16,6 +16,13 @@
 
 package com.netflix.metacat.connector.hive;
 
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -53,13 +60,6 @@ import org.apache.hadoop.hive.metastore.api.SerDeInfo;
 import org.apache.hadoop.hive.metastore.api.StorageDescriptor;
 import org.apache.hadoop.hive.metastore.api.Table;
 import org.apache.thrift.TException;
-
-import javax.annotation.Nullable;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Hive base connector base service impl.
@@ -351,7 +351,7 @@ public class HiveConnectorTableService implements ConnectorTableService {
         try {
             final List<QualifiedName> qualifiedNames = Lists.newArrayList();
 
-            final String tableFilter = (prefix != null && prefix.isTableDefinition()) ? prefix.getTableName() : null;
+            final String tableFilter = prefix != null && prefix.isTableDefinition() ? prefix.getTableName() : null;
             for (String tableName : metacatHiveClient.getAllTables(name.getDatabaseName())) {
                 if (tableFilter == null || tableName.startsWith(tableFilter)) {
                     final QualifiedName qualifiedName =
@@ -452,7 +452,7 @@ public class HiveConnectorTableService implements ConnectorTableService {
                     table.setParameters(parameters);
                 }
                 if (!parameters.containsKey(PARAMETER_EXTERNAL)
-                    || parameters.get(PARAMETER_EXTERNAL).equalsIgnoreCase("FALSE")) {
+                    || "FALSE".equalsIgnoreCase(parameters.get(PARAMETER_EXTERNAL))) {
                     parameters.put(PARAMETER_EXTERNAL, "TRUE");
                     metacatHiveClient.alterTable(oldName.getDatabaseName(), oldName.getTableName(), table);
                 }

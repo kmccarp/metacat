@@ -1,5 +1,16 @@
 package com.netflix.metacat.metadata.mysql;
 
+import java.sql.PreparedStatement;
+import java.util.Map;
+import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.StringJoiner;
+import java.util.stream.Collectors;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.ChildInfoDto;
 import com.netflix.metacat.common.dto.ParentInfoDto;
@@ -17,17 +28,6 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.PreparedStatement;
-import java.util.Map;
-import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.StringJoiner;
-import java.util.stream.Collectors;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 /**
  * Parent Child Relationship Metadata Service.

@@ -14,13 +14,13 @@
 
 package com.netflix.metacat.main.services;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.dto.TableDto;
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.dto.TableDto;
 
 /**
  * Table service.

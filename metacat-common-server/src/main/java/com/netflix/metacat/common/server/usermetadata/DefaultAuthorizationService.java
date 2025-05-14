@@ -17,12 +17,12 @@
 
 package com.netflix.metacat.common.server.usermetadata;
 
+import java.util.Map;
+import java.util.Set;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.exception.MetacatUnAuthorizedException;
 import com.netflix.metacat.common.server.properties.Config;
-
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Config based authorization service implementation.

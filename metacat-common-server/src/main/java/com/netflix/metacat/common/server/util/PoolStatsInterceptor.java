@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.server.util;
 
+import java.util.Map;
+
 import com.netflix.metacat.common.server.monitoring.Metrics;
 import com.netflix.spectator.api.Gauge;
 import com.netflix.spectator.api.Registry;
@@ -25,8 +27,6 @@ import org.apache.tomcat.jdbc.pool.ConnectionPool;
 import org.apache.tomcat.jdbc.pool.JdbcInterceptor;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.apache.tomcat.jdbc.pool.PooledConnection;
-
-import java.util.Map;
 
 /**
  * Pool stats interceptor.

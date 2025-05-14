@@ -1,5 +1,8 @@
 package com.netflix.metacat.connector.polaris;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.netflix.metacat.connector.polaris.configs.PolarisPersistenceConfig;
 import com.netflix.metacat.connector.polaris.store.PolarisStoreConnectorTest;
@@ -13,10 +16,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Test persistence operations on Database objects.

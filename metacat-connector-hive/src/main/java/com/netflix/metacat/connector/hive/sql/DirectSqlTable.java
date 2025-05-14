@@ -17,6 +17,15 @@
  */
 package com.netflix.metacat.connector.hive.sql;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
@@ -48,15 +57,6 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Types;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * This class makes direct sql calls to get/set table metadata.

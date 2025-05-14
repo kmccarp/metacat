@@ -17,15 +17,15 @@
  */
 package com.netflix.metacat.common.server.connectors;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.common.server.connectors.exception.NotFoundException;
 import com.netflix.metacat.common.server.connectors.model.BaseInfo;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Generic interface for methods pertaining to resources from connectors such as Databases, Tables and Partitions.

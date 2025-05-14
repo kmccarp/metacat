@@ -17,6 +17,12 @@
  */
 package com.netflix.metacat.connector.s3;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.inject.persist.Transactional;
@@ -39,14 +45,8 @@ import com.netflix.metacat.connector.s3.model.Location;
 import com.netflix.metacat.connector.s3.model.Schema;
 import com.netflix.metacat.connector.s3.model.Table;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * S3 Connector implementation for tables.

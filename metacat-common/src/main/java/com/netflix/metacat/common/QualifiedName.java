@@ -17,19 +17,19 @@
  */
 package com.netflix.metacat.common;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.netflix.metacat.common.dto.PartitionDto;
-import lombok.Getter;
-import lombok.NonNull;
-
 import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.netflix.metacat.common.dto.PartitionDto;
+import lombok.Getter;
+import lombok.NonNull;
 
 /**
  * A fully qualified name that references a source of data.

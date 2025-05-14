@@ -16,6 +16,11 @@
 
 package com.netflix.metacat.connector.druid;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Comparator;
+import java.util.List;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
@@ -35,11 +40,6 @@ import com.netflix.metacat.connector.druid.converter.DruidConverterUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.Comparator;
-import java.util.List;
 
 /**
  * Druid Connector Table Service, which manages druid data source.
@@ -101,7 +101,7 @@ public class DruidConnectorTableService implements ConnectorTableService {
     ) {
         try {
             final List<QualifiedName> qualifiedNames = Lists.newArrayList();
-            final String tableFilter = (prefix != null && prefix.isTableDefinition()) ? prefix.getTableName() : null;
+            final String tableFilter = prefix != null && prefix.isTableDefinition() ? prefix.getTableName() : null;
             for (String tableName : this.druidClient.getAllDataSources()) {
                 final QualifiedName qualifiedName =
                     QualifiedName.ofTable(name.getCatalogName(), name.getDatabaseName(), tableName);

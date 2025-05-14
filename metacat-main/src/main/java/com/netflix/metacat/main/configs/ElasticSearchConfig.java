@@ -17,6 +17,9 @@
  */
 package com.netflix.metacat.main.configs;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import com.google.common.base.Splitter;
 import com.netflix.metacat.common.json.MetacatJson;
 import com.netflix.metacat.common.server.events.MetacatEventBus;
@@ -44,9 +47,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 
 /**
  * Configuration for ElasticSearch which triggers when metacat.elasticsearch.enabled is true.

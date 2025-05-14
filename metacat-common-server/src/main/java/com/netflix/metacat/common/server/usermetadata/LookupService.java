@@ -17,11 +17,11 @@
  */
 package com.netflix.metacat.common.server.usermetadata;
 
-import com.netflix.metacat.common.server.model.Lookup;
-
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.Set;
+
+import com.netflix.metacat.common.server.model.Lookup;
 
 /**
  * Lookup service API.

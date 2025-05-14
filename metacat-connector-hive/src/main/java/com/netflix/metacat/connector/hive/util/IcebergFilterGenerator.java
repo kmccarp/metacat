@@ -17,6 +17,11 @@
 
 package com.netflix.metacat.connector.hive.util;
 
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import org.apache.iceberg.expressions.Expression;
@@ -36,11 +41,6 @@ import com.netflix.metacat.common.server.partition.parser.Variable;
 import com.netflix.metacat.common.server.partition.visitor.PartitionParserEval;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Iceberg Filter generator.
@@ -98,7 +98,7 @@ public class IcebergFilterGenerator extends PartitionParserEval {
             createIcebergExpression(value, startValue, node.not ? Compare.LT : Compare.GTE);
         final Expression compare2 =
             createIcebergExpression(value, endValue, node.not ? Compare.GT : Compare.LTE);
-        return (node.not)
+        return node.not
             ? Expressions.or(compare1, compare2) : Expressions.and(compare1, compare2);
     }
 

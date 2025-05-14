@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.server.api.v1;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.netflix.metacat.common.dto.GetPartitionsRequestDto;
 import com.netflix.metacat.common.dto.PartitionDto;
 import com.netflix.metacat.common.dto.PartitionsSaveRequestDto;
 import com.netflix.metacat.common.dto.PartitionsSaveResponseDto;
 import com.netflix.metacat.common.dto.SortOrder;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Interfaces needed by Thrift.

@@ -15,6 +15,13 @@
  */
 package com.netflix.metacat.connector.hive.metastore;
 
+import javax.jdo.JDODataStoreException;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.base.Throwables;
 import com.netflix.metacat.connector.hive.util.HiveConfigConstants;
 import com.netflix.spectator.api.Registry;
@@ -23,13 +30,6 @@ import lombok.Setter;
 import org.apache.hadoop.hive.conf.HiveConf;
 import org.apache.hadoop.hive.metastore.Deadline;
 import org.apache.hadoop.hive.metastore.api.MetaException;
-
-import javax.jdo.JDODataStoreException;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-import java.util.concurrent.TimeUnit;
 
 /**
  * HMSHandlerProxy.

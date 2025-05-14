@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.common.server.converter;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Map;
+
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.dto.AuditDto;
@@ -57,10 +61,6 @@ import org.dozer.Mapper;
 import org.dozer.loader.api.BeanMappingBuilder;
 import org.dozer.loader.api.FieldsMappingOptions;
 import org.dozer.loader.api.TypeMappingOptions;
-
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Mapper from Dto to Connector Info.

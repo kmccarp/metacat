@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.common.server.usermetadata;
 
-import com.netflix.metacat.common.QualifiedName;
-
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+
+import com.netflix.metacat.common.QualifiedName;
 
 /**
  * Tag Service API.

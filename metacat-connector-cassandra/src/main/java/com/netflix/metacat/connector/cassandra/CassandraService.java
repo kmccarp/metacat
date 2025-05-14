@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Session;
 import lombok.Getter;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * Abstract class for common Cassandra methods based around the Cluster.

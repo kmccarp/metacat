@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.properties;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
 import lombok.Data;
 import lombok.NonNull;
-
-import java.util.List;
 
 /**
  * Properties related to Elasticsearch configuration.

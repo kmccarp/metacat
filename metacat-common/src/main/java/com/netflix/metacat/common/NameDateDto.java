@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.common;
 
+import java.util.Date;
+
 import com.netflix.metacat.common.dto.BaseDto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.Date;
 
 /**
  * DTO containing the qualified name and the audit info.

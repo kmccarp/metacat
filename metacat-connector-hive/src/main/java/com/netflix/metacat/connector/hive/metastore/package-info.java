@@ -23,4 +23,5 @@
 
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.connector.hive.metastore;
+
 import javax.annotation.ParametersAreNonnullByDefault;

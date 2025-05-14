@@ -13,6 +13,14 @@
 
 package com.netflix.metacat.main.services.impl;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -69,13 +77,6 @@ import com.netflix.spectator.api.Registry;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 
 
@@ -509,7 +510,7 @@ public class TableServiceImpl implements TableService {
 
         if (getTableServiceParameters.isIncludeDefinitionMetadata()) {
             Optional<ObjectNode> definitionMetadata =
-                (getTableServiceParameters.isDisableOnReadMetadataIntercetor())
+                getTableServiceParameters.isDisableOnReadMetadataIntercetor()
                     ? userMetadataService.getDefinitionMetadata(name)
                     : userMetadataService.getDefinitionMetadataWithInterceptor(name,
                     GetMetadataInterceptorParameters.builder().hasMetadata(tableInternal).build());

@@ -18,14 +18,14 @@
 
 package com.netflix.metacat.connector.pig.converters;
 
+import java.util.Map;
+
 import com.google.common.collect.ImmutableMap;
 import com.netflix.metacat.common.type.BaseType;
 import com.netflix.metacat.common.type.Type;
 import com.netflix.metacat.common.type.VarbinaryType;
 import lombok.Getter;
 import org.apache.pig.data.DataType;
-
-import java.util.Map;
 
 /**
  * Pig type mapping.

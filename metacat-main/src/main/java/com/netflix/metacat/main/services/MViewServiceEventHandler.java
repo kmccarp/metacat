@@ -17,6 +17,8 @@
 
 package com.netflix.metacat.main.services;
 
+import java.util.List;
+
 import com.netflix.metacat.common.NameDateDto;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.events.AsyncListener;
@@ -28,8 +30,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 /**
  * Event handler for view changes based on table changes.

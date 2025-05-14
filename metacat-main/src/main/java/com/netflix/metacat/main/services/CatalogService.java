@@ -13,13 +13,13 @@
 
 package com.netflix.metacat.main.services;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.CatalogDto;
 import com.netflix.metacat.common.dto.CatalogMappingDto;
 import com.netflix.metacat.common.dto.CreateCatalogDto;
-
-import javax.annotation.Nonnull;
-import java.util.List;
 
 /**
  * Catalog service.

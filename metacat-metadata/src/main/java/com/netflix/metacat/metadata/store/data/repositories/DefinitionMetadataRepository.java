@@ -1,11 +1,11 @@
 package com.netflix.metacat.metadata.store.data.repositories;
 
+import java.util.Optional;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.metadata.store.data.entities.DefinitionMetadataEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
 
 /**
  * The DefinitionMetadata entity repository.

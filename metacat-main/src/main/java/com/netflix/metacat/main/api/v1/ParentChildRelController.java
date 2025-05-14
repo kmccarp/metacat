@@ -1,5 +1,7 @@
 package com.netflix.metacat.main.api.v1;
 
+import java.util.Set;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.ChildInfoDto;
 import com.netflix.metacat.common.dto.ParentInfoDto;
@@ -16,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.Set;
 
 /**
  * Parent Child Relation V1 API implementation.

@@ -17,16 +17,16 @@
  */
 package com.netflix.metacat.common.dto;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.netflix.metacat.common.json.MetacatJsonLocator;
-import lombok.NonNull;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.netflix.metacat.common.json.MetacatJsonLocator;
+import lombok.NonNull;
 
 /**
  * Base class for all common DTOs.

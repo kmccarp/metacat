@@ -16,6 +16,11 @@
 
 package com.netflix.metacat.connector.hive.sql;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
 import com.google.common.base.Throwables;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
@@ -35,11 +40,6 @@ import com.netflix.spectator.api.Registry;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.hadoop.fs.FileSystem;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
 
 /**
  * HiveConnectorFastTableService.

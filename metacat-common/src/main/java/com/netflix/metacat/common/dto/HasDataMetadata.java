@@ -17,9 +17,9 @@
  */
 package com.netflix.metacat.common.dto;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import javax.annotation.Nonnull;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 /**
  * Marker interface for objects with data metadata.

@@ -16,6 +16,11 @@
 
 package com.netflix.metacat.main.services.impl;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -33,11 +38,6 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.Caching;
-
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Handles calls to the connector table service.

@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.connector.postgresql;
 
+import javax.annotation.Nonnull;
+import java.util.Map;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.server.connectors.DefaultConnectorFactory;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.util.Map;
 
 /**
  * PostgreSQL implementation of a connector factory.

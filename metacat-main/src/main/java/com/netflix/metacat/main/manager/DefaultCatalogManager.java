@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.main.manager;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.google.common.base.Preconditions;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.properties.Config;
@@ -25,11 +30,6 @@ import com.netflix.metacat.common.server.util.MetacatUtils;
 import com.netflix.spectator.api.Registry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
-
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Catalog manager. This loads the catalogs defined as .properties files under the location defined by config property

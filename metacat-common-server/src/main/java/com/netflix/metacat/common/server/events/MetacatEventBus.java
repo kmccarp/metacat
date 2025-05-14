@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.server.events;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.server.monitoring.Metrics;
 import com.netflix.spectator.api.Counter;
 import com.netflix.spectator.api.Registry;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEvent;
-
-import javax.annotation.Nonnull;
 
 /**
  * Event bus.

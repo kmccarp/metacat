@@ -17,10 +17,10 @@
  */
 package com.netflix.metacat.common.type;
 
+import java.util.Collection;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-
-import java.util.Collection;
 
 /**
  * Type util class.

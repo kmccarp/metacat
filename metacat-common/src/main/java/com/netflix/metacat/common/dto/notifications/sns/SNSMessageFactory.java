@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.dto.notifications.sns;
 
+import java.io.IOException;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.metacat.common.dto.notifications.sns.messages.AddPartitionMessage;
@@ -27,8 +29,6 @@ import com.netflix.metacat.common.dto.notifications.sns.messages.RenameTableMess
 import com.netflix.metacat.common.dto.notifications.sns.messages.UpdateTableMessage;
 import com.netflix.metacat.common.dto.notifications.sns.messages.UpdateTablePartitionsMessage;
 import lombok.NonNull;
-
-import java.io.IOException;
 
 /**
  * Create SNSMessage object based on the JSON passed in.

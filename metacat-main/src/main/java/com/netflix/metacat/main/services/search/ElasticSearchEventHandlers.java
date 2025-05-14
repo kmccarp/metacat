@@ -14,6 +14,11 @@
 
 package com.netflix.metacat.main.services.search;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.dto.DatabaseDto;
@@ -35,11 +40,6 @@ import com.netflix.spectator.api.Registry;
 import com.netflix.spectator.api.Timer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.EventListener;
-
-import java.util.List;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * Event handlers for elastic search indexing.

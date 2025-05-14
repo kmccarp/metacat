@@ -18,5 +18,6 @@
  */
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.common.server.spi;
+
 import javax.annotation.ParametersAreNonnullByDefault;
 

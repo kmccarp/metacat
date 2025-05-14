@@ -13,18 +13,18 @@
 
 package com.netflix.metacat.common.server.util;
 
-import com.google.common.collect.Maps;
 import java.sql.SQLException;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.jdbc.pool.DataSourceFactory;
-import org.apache.tomcat.jdbc.pool.DataSourceProxy;
-
-import jakarta.annotation.PreDestroy;
 import javax.management.ObjectName;
 import javax.sql.DataSource;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
+
+import com.google.common.collect.Maps;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.jdbc.pool.DataSourceFactory;
+import org.apache.tomcat.jdbc.pool.DataSourceProxy;
+import jakarta.annotation.PreDestroy;
 
 /**
  * Data source manager.

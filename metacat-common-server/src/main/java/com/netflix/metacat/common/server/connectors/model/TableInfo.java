@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * Table Info.
@@ -36,7 +36,7 @@ import java.util.Map;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-public class TableInfo extends BaseInfo {
+public final class TableInfo extends BaseInfo {
     private List<FieldInfo> fields;
     private StorageInfo serde;
     private ViewInfo view;

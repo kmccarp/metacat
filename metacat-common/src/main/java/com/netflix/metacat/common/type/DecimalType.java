@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.type;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Decimal type class.

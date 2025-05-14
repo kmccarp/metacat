@@ -17,14 +17,14 @@
  */
 package com.netflix.metacat.common.server.api.v1;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.CatalogDto;
 import com.netflix.metacat.common.dto.DatabaseCreateRequestDto;
 import com.netflix.metacat.common.dto.DatabaseDto;
 import com.netflix.metacat.common.dto.TableDto;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Interface for methods needed by Thrift.

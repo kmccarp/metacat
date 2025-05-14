@@ -19,4 +19,5 @@
  */
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.main.services.notifications;
+
 import javax.annotation.ParametersAreNonnullByDefault;

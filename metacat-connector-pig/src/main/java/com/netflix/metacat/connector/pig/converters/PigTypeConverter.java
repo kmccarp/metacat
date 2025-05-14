@@ -18,6 +18,11 @@
 
 package com.netflix.metacat.connector.pig.converters;
 
+import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Properties;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.server.connectors.ConnectorTypeConverter;
@@ -40,11 +45,6 @@ import org.apache.pig.impl.logicalLayer.schema.Schema;
 import org.apache.pig.newplan.logical.Util;
 import org.apache.pig.newplan.logical.relational.LogicalSchema;
 import org.apache.pig.parser.QueryParserDriver;
-
-import javax.annotation.Nonnull;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Properties;
 
 /**
  * Class to convert pig to canonical type and vice versa.

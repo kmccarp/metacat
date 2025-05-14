@@ -1,5 +1,13 @@
 package com.netflix.metacat.connector.polaris.store;
 
+import static org.mockito.Mockito.when;
+
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
 
 import com.netflix.metacat.connector.polaris.common.PolarisUtils;
 import com.netflix.metacat.connector.polaris.configs.PolarisPersistenceConfig;
@@ -25,15 +33,6 @@ import org.springframework.data.auditing.DateTimeProvider;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
-
-import static org.mockito.Mockito.when;
-
 /**
  * Test persistence operations on Database objects.
  */
@@ -46,12 +45,12 @@ public class PolarisStoreConnectorTest {
     private static final String DB_NAME_FOO = "foo";
     private static final String TBL_NAME_BAR = "bar";
     private static final String DEFAULT_METACAT_USER = "metacat_user";
-    private static final Map<String, String> TBL_PARAMS = new HashMap<String, String>() {
-        {
-            put("metadata-key-1", "metadata-value-1");
-            put("metadata-key-2", "metadata-value-2");
-        }
-    };
+    private static final Map<String, String> TBL_PARAMS;
+    static {
+        TBL_PARAMS = new HashMap<String, String>();
+        TBL_PARAMS.put("metadata-key-1", "metadata-value-1");
+        TBL_PARAMS.put("metadata-key-2", "metadata-value-2");
+    }
     private static Random random = new Random(System.currentTimeMillis());
 
     @Autowired
@@ -280,9 +279,8 @@ public class PolarisStoreConnectorTest {
         // At this point, savedEntity is stale, and any updates to savedEntity should not be allowed
         // to persist.
         savedEntity.setMetadataLocation(location2);
-        Assertions.assertThrows(OptimisticLockingFailureException.class, () -> {
-            polarisConnector.saveTable(savedEntity);
-        });
+        Assertions.assertThrows(OptimisticLockingFailureException.class, () ->
+            polarisConnector.saveTable(savedEntity));
     }
 
     /**
@@ -381,12 +379,10 @@ public class PolarisStoreConnectorTest {
 
         // At this point, savedEntity is stale, and any updates to savedEntity should not be allowed
         // to persist.
-        Map<String, String> newParams = new HashMap<String, String>() {
-            { put("metadata-key-1", "metadata-value-1-updated"); }
-        };
+        Map<String, String> newParams = new HashMap<>();
+        newParams.put("metadata-key-1", "metadata-value-1-updated");
         savedEntity.setParams(newParams);
-        Assertions.assertThrows(OptimisticLockingFailureException.class, () -> {
-            polarisConnector.saveTable(savedEntity);
-        });
+        Assertions.assertThrows(OptimisticLockingFailureException.class, () ->
+            polarisConnector.saveTable(savedEntity));
     }
 }

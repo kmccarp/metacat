@@ -17,17 +17,17 @@
  */
 package com.netflix.metacat.common;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
-
 import javax.annotation.Nullable;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.Setter;
 
 /**
  * The context of the request to metacat.

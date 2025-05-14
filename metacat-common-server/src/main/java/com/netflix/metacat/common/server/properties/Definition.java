@@ -17,11 +17,11 @@
  */
 package com.netflix.metacat.common.server.properties;
 
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.netflix.metacat.common.QualifiedName;
 import lombok.NonNull;
-
-import java.util.Set;
 
 /**
  * Definition metadata related properties.

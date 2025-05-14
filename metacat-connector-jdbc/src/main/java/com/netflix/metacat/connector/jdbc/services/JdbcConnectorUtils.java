@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.connector.jdbc.services;
 
-import com.netflix.metacat.common.server.connectors.ConnectorUtils;
-import lombok.NonNull;
-
 import javax.annotation.Nonnull;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import com.netflix.metacat.common.server.connectors.ConnectorUtils;
+import lombok.NonNull;
 
 /**
  * Utility methods for working with JDBC connections.

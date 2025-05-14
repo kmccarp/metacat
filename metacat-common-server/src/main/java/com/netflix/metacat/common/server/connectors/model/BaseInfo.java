@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.common.server.connectors.model;
 
+import java.io.Serializable;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-import java.util.Map;
 
 /**
  * Base class for catalog resources.

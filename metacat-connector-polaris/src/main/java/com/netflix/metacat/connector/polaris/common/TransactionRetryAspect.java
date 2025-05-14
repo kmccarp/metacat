@@ -1,5 +1,7 @@
 package com.netflix.metacat.connector.polaris.common;
 
+import java.sql.SQLException;
+
 import com.google.common.base.Throwables;
 import com.netflix.metacat.common.server.connectors.ConnectorContext;
 import com.netflix.metacat.common.server.monitoring.Metrics;
@@ -11,8 +13,6 @@ import org.springframework.core.Ordered;
 import org.springframework.retry.RetryException;
 import org.springframework.retry.support.RetryTemplate;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
-
-import java.sql.SQLException;
 
 /**
  * Aspect for client-side transaction retries.
@@ -50,7 +50,7 @@ public class TransactionRetryAspect implements Ordered {
     }
 
     private Object retryOnError(final ProceedingJoinPoint pjp) throws Exception {
-        return retryTemplate.<Object, Exception>execute(context -> {
+        return retryTemplate.execute(context -> {
             try {
                 return pjp.proceed();
             } catch (Throwable t) {

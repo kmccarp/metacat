@@ -13,14 +13,14 @@
 
 package com.netflix.metacat.main.services.search;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.TableDto;
 import org.joda.time.Instant;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Utility class for index, update, delete metacat doc from elastic search.

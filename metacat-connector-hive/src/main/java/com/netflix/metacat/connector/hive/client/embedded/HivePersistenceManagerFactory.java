@@ -16,15 +16,15 @@
 
 package com.netflix.metacat.connector.hive.client.embedded;
 
+import javax.jdo.PersistenceManagerFactory;
+import javax.sql.DataSource;
+import java.util.Map;
+
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.server.util.DataSourceManager;
 import com.netflix.metacat.connector.hive.util.HiveConfigConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.datanucleus.api.jdo.JDOPersistenceManagerFactory;
-
-import javax.jdo.PersistenceManagerFactory;
-import javax.sql.DataSource;
-import java.util.Map;
 
 /**
  * HivePersistenceManagerFactory.

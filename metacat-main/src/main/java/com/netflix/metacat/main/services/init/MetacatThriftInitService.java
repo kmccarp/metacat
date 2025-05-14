@@ -1,5 +1,7 @@
 package com.netflix.metacat.main.services.init;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import com.google.common.base.Throwables;
 import com.netflix.metacat.main.services.MetacatThriftService;
 import lombok.Getter;
@@ -7,8 +9,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Inits the thrift service.

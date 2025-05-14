@@ -17,12 +17,6 @@
  */
 package com.netflix.metacat.common.server.usermetadata;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.dto.DefinitionMetadataDto;
-import com.netflix.metacat.common.dto.HasDefinitionMetadata;
-import com.netflix.metacat.common.dto.HasMetadata;
-
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Collections;
@@ -31,6 +25,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.dto.DefinitionMetadataDto;
+import com.netflix.metacat.common.dto.HasDefinitionMetadata;
+import com.netflix.metacat.common.dto.HasMetadata;
 
 /**
  * User metadata service API.

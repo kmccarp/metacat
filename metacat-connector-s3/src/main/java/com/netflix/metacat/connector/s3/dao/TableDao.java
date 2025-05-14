@@ -13,13 +13,13 @@
 
 package com.netflix.metacat.connector.s3.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.connector.s3.model.Table;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * Table DAO.

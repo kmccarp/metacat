@@ -17,13 +17,13 @@
  */
 package com.netflix.metacat.connector.redshift;
 
+import javax.sql.DataSource;
+
 import com.google.inject.Inject;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.connector.jdbc.JdbcExceptionMapper;
 import com.netflix.metacat.connector.jdbc.JdbcTypeConverter;
 import com.netflix.metacat.connector.jdbc.services.JdbcConnectorTableService;
-
-import javax.sql.DataSource;
 
 /**
  * Redshift table service implementation.

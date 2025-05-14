@@ -1,12 +1,12 @@
 package com.netflix.metacat.main.services;
 
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.dto.TableDto;
-import lombok.NonNull;
-
 import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.List;
+
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.dto.TableDto;
+import lombok.NonNull;
 
 /**
  * Interface for validating table owner attribute.

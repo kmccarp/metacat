@@ -13,11 +13,11 @@
 
 package com.netflix.metacat.connector.s3.dao;
 
+import java.util.List;
+
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.connector.s3.model.Partition;
-
-import java.util.List;
 
 /**
  * Partition DAO.

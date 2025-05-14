@@ -16,6 +16,8 @@
  */
 package com.netflix.metacat.connector.hive.commonview;
 
+import java.util.concurrent.ExecutionException;
+
 import com.github.rholder.retry.RetryException;
 import com.github.rholder.retry.Retryer;
 import com.github.rholder.retry.RetryerBuilder;
@@ -31,8 +33,6 @@ import com.netflix.metacat.connector.hive.sql.DirectSqlTable;
 import com.netflix.spectator.api.Registry;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
-
-import java.util.concurrent.ExecutionException;
 
 /**
  * CommonViewHandler class.

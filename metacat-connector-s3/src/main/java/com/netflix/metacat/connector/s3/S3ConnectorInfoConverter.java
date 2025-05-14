@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.connector.s3;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -40,11 +45,6 @@ import com.netflix.metacat.connector.s3.model.Partition;
 import com.netflix.metacat.connector.s3.model.Schema;
 import com.netflix.metacat.connector.s3.model.Source;
 import com.netflix.metacat.connector.s3.model.Table;
-
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Converts S3 model objects to Metacat DTOs and vice versa.

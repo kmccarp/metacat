@@ -26,6 +26,17 @@
  */
 package com.netflix.metacat.main.manager;
 
+import javax.annotation.Nonnull;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.collect.HashBasedTable;
@@ -52,20 +63,7 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.common.Strings;
-
-
 import jakarta.annotation.PreDestroy;
-
-import javax.annotation.Nonnull;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Connector manager.
@@ -138,10 +136,9 @@ public class ConnectorManager {
                 Preconditions.checkState(!catalogs.contains(catalogName, EMPTY_STRING),
                     "A catalog with name %s already exists", catalogName);
             } else {
-                databaseNames.forEach(databaseName -> {
+                databaseNames.forEach(databaseName ->
                     Preconditions.checkState(!catalogs.contains(catalogName, databaseName),
-                        "A catalog with name %s for database %s already exists", catalogName, databaseName);
-                });
+                        "A catalog with name %s for database %s already exists", catalogName, databaseName));
             }
 
             catalogConfigs.add(catalogConfig);
@@ -171,9 +168,8 @@ public class ConnectorManager {
             if (databaseNames.isEmpty()) {
                 catalogs.put(catalogName, EMPTY_STRING, catalogHolder);
             } else {
-                databaseNames.forEach(databaseName -> {
-                    catalogs.put(catalogName, databaseName, catalogHolder);
-                });
+                databaseNames.forEach(databaseName ->
+                    catalogs.put(catalogName, databaseName, catalogHolder));
             }
         } else {
             log.warn("No plugin for connector with type {}", connectorType);

@@ -1,6 +1,16 @@
 //CHECKSTYLE:OFF
 package com.netflix.metacat.common.server.util;
 
+import javax.annotation.Nullable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Properties;
+import java.util.Set;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.base.Preconditions;
@@ -15,20 +25,10 @@ import com.netflix.metacat.common.server.spi.MetacatCatalogConfig;
 import com.netflix.spectator.api.Registry;
 import org.springframework.context.ApplicationContext;
 
-import javax.annotation.Nullable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Properties;
-import java.util.Set;
-
 /**
  * General metacat utility methods.
  */
-public class MetacatUtils {
+public final class MetacatUtils {
 
     public static final String ICEBERG_MIGRATION_DO_NOT_MODIFY_TAG = "iceberg_migration_do_not_modify";
     public static final String NAME_TAGS = "tags";
@@ -102,7 +102,7 @@ public class MetacatUtils {
 
     public static boolean configHasDoNotModifyForIcebergMigrationTag(final Set<String> tags) {
         return Optional.ofNullable(tags).orElse(Collections.emptySet()).stream().
-                anyMatch(t -> t.trim().equalsIgnoreCase(ICEBERG_MIGRATION_DO_NOT_MODIFY_TAG));
+                anyMatch(t -> ICEBERG_MIGRATION_DO_NOT_MODIFY_TAG.equalsIgnoreCase(t.trim()));
     }
 
     public static boolean hasDoNotModifyForIcebergMigrationTag(@Nullable final TableDto tableDto,
@@ -111,7 +111,7 @@ public class MetacatUtils {
             final Set<String> tableTags = getTableTags(tableDto.getDefinitionMetadata());
             if (tableTags != null) {
                 return configHasDoNotModifyForIcebergMigrationTag(tags) &&
-                        tableTags.stream().anyMatch(t -> t.trim().equalsIgnoreCase(ICEBERG_MIGRATION_DO_NOT_MODIFY_TAG));
+                        tableTags.stream().anyMatch(t -> ICEBERG_MIGRATION_DO_NOT_MODIFY_TAG.equalsIgnoreCase(t.trim()));
             }
         }
         return false;

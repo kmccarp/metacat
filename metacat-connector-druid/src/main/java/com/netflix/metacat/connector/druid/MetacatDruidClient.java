@@ -16,9 +16,9 @@
 
 package com.netflix.metacat.connector.druid;
 
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import java.util.List;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 
 /**

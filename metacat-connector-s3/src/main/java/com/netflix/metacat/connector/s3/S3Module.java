@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.connector.s3;
 
+import java.util.Map;
+
 import com.google.inject.Binder;
 import com.google.inject.Module;
 import com.google.inject.Scopes;
@@ -31,8 +33,6 @@ import com.netflix.metacat.connector.s3.dao.impl.FieldDaoImpl;
 import com.netflix.metacat.connector.s3.dao.impl.PartitionDaoImpl;
 import com.netflix.metacat.connector.s3.dao.impl.SourceDaoImpl;
 import com.netflix.metacat.connector.s3.dao.impl.TableDaoImpl;
-
-import java.util.Map;
 
 /**
  * Guice module.

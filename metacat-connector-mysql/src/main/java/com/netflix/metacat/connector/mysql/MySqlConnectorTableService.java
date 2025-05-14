@@ -1,5 +1,10 @@
 package com.netflix.metacat.connector.mysql;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import com.google.inject.Inject;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.model.AuditInfo;
@@ -8,11 +13,6 @@ import com.netflix.metacat.connector.jdbc.JdbcExceptionMapper;
 import com.netflix.metacat.connector.jdbc.JdbcTypeConverter;
 import com.netflix.metacat.connector.jdbc.services.JdbcConnectorTableService;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 /**
  * Mysql table service implementation.

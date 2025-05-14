@@ -13,6 +13,8 @@
 
 package com.netflix.metacat.connector.s3;
 
+import java.util.Map;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
@@ -26,8 +28,6 @@ import com.netflix.metacat.common.server.connectors.ConnectorFactory;
 import com.netflix.metacat.common.server.connectors.ConnectorPartitionService;
 import com.netflix.metacat.common.server.connectors.ConnectorTableService;
 import com.netflix.metacat.common.server.util.DataSourceManager;
-
-import java.util.Map;
 
 /**
  * s3 connector factory.

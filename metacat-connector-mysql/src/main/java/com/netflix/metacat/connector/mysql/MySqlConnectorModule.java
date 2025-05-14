@@ -17,6 +17,10 @@
  */
 package com.netflix.metacat.connector.mysql;
 
+import javax.annotation.Nonnull;
+import javax.sql.DataSource;
+import java.util.Map;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Scopes;
 import com.netflix.metacat.common.server.connectors.ConnectorDatabaseService;
@@ -28,10 +32,6 @@ import com.netflix.metacat.connector.jdbc.JdbcExceptionMapper;
 import com.netflix.metacat.connector.jdbc.JdbcTypeConverter;
 import com.netflix.metacat.connector.jdbc.services.JdbcConnectorPartitionService;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import javax.sql.DataSource;
-import java.util.Map;
 
 /**
  * A Guice Module for the MySqlConnector.

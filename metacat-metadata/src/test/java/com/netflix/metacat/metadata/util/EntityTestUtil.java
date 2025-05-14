@@ -1,6 +1,8 @@
 //CHECKSTYLE:OFF
 package com.netflix.metacat.metadata.util;
 
+import java.time.Instant;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,8 +11,6 @@ import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.metadata.store.data.entities.AuditEntity;
 import com.netflix.metacat.metadata.store.data.entities.DataMetadataEntity;
 import com.netflix.metacat.metadata.store.data.entities.DefinitionMetadataEntity;
-
-import java.time.Instant;
 
 public class EntityTestUtil {
     public static ObjectMapper objectMapper = new ObjectMapper()

@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.connector.postgresql;
 
+import javax.annotation.Nonnull;
+
 import com.netflix.metacat.common.type.ArrayType;
 import com.netflix.metacat.common.type.BaseType;
 import com.netflix.metacat.common.type.CharType;
@@ -27,8 +29,6 @@ import com.netflix.metacat.common.type.VarcharType;
 import com.netflix.metacat.connector.jdbc.JdbcTypeConverter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
 
 /**
  * Type converter for PostgreSql.

@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.main.api.v1;
 
+import java.util.List;
+
 import com.netflix.metacat.common.dto.TableDto;
 import com.netflix.metacat.main.api.RequestWrapper;
 import com.netflix.metacat.main.services.search.ElasticSearchUtil;
@@ -30,8 +32,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * Search API.

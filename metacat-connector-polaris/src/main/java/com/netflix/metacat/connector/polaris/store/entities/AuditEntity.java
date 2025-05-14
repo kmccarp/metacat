@@ -1,5 +1,6 @@
 package com.netflix.metacat.connector.polaris.store.entities;
 
+import java.time.Instant;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,11 +11,9 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import java.time.Instant;
 
 /**
  * Embeddable audit entity.

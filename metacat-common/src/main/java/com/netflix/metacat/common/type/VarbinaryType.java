@@ -15,12 +15,12 @@
  */
 package com.netflix.metacat.common.type;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * VarbinaryType type.

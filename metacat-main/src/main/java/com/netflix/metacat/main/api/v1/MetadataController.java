@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.main.api.v1;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.collect.Sets;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -44,11 +49,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 /**
  * Metadata V1 API implementation.

@@ -1,6 +1,10 @@
 
 package com.netflix.metacat.connector.polaris;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import com.netflix.metacat.common.QualifiedName;
@@ -40,10 +44,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import spock.lang.Shared;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 /**

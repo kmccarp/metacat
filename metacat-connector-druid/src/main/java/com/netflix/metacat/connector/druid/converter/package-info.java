@@ -24,4 +24,5 @@
 
 @ParametersAreNonnullByDefault
 package com.netflix.metacat.connector.druid.converter;
+
 import javax.annotation.ParametersAreNonnullByDefault;

@@ -1,14 +1,14 @@
 package com.netflix.metacat.connector.polaris.store.entities;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * Converter to represent String Map as a JSON-formatted String in the database.

@@ -17,10 +17,10 @@
  */
 package com.netflix.metacat.common.server.connectors;
 
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.model.DatabaseInfo;
-
-import java.util.List;
 
 /**
  * Interfaces for manipulating database information for this connector.

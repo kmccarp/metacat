@@ -2,7 +2,6 @@ package com.netflix.metacat.metadata.store.data.converters;
 
 import com.netflix.metacat.common.QualifiedName;
 import lombok.extern.slf4j.Slf4j;
-
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 

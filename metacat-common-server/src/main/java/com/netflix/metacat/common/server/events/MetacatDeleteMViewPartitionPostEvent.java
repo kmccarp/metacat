@@ -17,16 +17,16 @@
  */
 package com.netflix.metacat.common.server.events;
 
+import javax.annotation.Nonnull;
+import java.util.Collections;
+import java.util.List;
+
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.ToString;
-
-import javax.annotation.Nonnull;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Post delete view partition event.

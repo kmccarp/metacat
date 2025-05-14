@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.thrift;
 
+import javax.annotation.Nullable;
+
 import com.google.common.base.Objects;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.server.util.MetacatContextManager;
@@ -25,8 +27,6 @@ import org.apache.thrift.server.ServerContext;
 import org.apache.thrift.server.TServerEventHandler;
 import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransport;
-
-import javax.annotation.Nullable;
 
 /**
  * Server event handler.

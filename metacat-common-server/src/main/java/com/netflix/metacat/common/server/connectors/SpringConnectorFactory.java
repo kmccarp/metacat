@@ -40,7 +40,7 @@ public abstract class SpringConnectorFactory implements ConnectorFactory {
      * @param connectorInfoConverter connector info converter
      * @param connectorContext       connector related config
      */
-    public SpringConnectorFactory(final ConnectorInfoConverter connectorInfoConverter,
+    protected SpringConnectorFactory(final ConnectorInfoConverter connectorInfoConverter,
                                   final ConnectorContext connectorContext) {
         this.catalogName = connectorContext.getCatalogName();
         this.catalogShardName = connectorContext.getCatalogShardName();

@@ -1,5 +1,11 @@
 package com.netflix.metacat.connector.polaris.mappers;
 
+import java.sql.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.ImmutableSet;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.server.connectors.exception.InvalidMetaException;
@@ -10,12 +16,6 @@ import com.netflix.metacat.connector.hive.sql.DirectSqlTable;
 import com.netflix.metacat.connector.polaris.store.entities.PolarisTableEntity;
 import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang3.StringUtils;
-
-import java.sql.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Table object mapper implementations.
@@ -73,7 +73,7 @@ public class PolarisTableMapper implements
             metadata.put(DirectSqlTable.PARAM_TABLE_TYPE, DirectSqlTable.ICEBERG_TABLE_TYPE);
         }
 
-        final TableInfo tableInfo = TableInfo.builder()
+        return TableInfo.builder()
             .name(QualifiedName.ofTable(catalogName, entity.getDbName(), entity.getTblName()))
             .metadata(metadata)
             .serde(StorageInfo.builder().inputFormat("org.apache.hadoop.mapred.FileInputFormat")
@@ -88,7 +88,6 @@ public class PolarisTableMapper implements
                 .lastModifiedDate(Date.from(entity.getAudit().getLastModifiedDate()))
                 .build())
             .build();
-        return tableInfo;
     }
 
     /**
@@ -118,12 +117,11 @@ public class PolarisTableMapper implements
             throw new InvalidMetaException(info.getName(), message, null);
         }
 
-        final PolarisTableEntity tableEntity = PolarisTableEntity.builder()
+        return PolarisTableEntity.builder()
             .dbName(info.getName().getDatabaseName())
             .tblName(info.getName().getTableName())
             .metadataLocation(location)
             .params(filterMetadata(metadata))
             .build();
-        return tableEntity;
     }
 }

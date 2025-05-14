@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.connector.cassandra;
 
+import javax.annotation.Nonnull;
+
 import com.datastax.driver.core.exceptions.AlreadyExistsException;
 import com.datastax.driver.core.exceptions.DriverException;
 import com.netflix.metacat.common.QualifiedName;
@@ -24,8 +26,6 @@ import com.netflix.metacat.common.server.connectors.exception.ConnectorException
 import com.netflix.metacat.common.server.connectors.exception.DatabaseAlreadyExistsException;
 import com.netflix.metacat.common.server.connectors.exception.TableAlreadyExistsException;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * Convert Cassandra driver exceptions to connector exceptions.

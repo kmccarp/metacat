@@ -16,15 +16,15 @@
 
 package com.netflix.metacat.connector.hive;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Set;
+
 import com.netflix.metacat.connector.hive.client.embedded.HivePrivilege;
 import org.apache.hadoop.hive.metastore.api.Database;
 import org.apache.hadoop.hive.metastore.api.Partition;
 import org.apache.hadoop.hive.metastore.api.Table;
 import org.apache.thrift.TException;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Set;
 
 /**
  * IMetacatHiveClient.

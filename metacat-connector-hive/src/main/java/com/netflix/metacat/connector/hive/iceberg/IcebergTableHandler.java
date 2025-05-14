@@ -17,6 +17,19 @@
 
 package com.netflix.metacat.connector.hive.iceberg;
 
+import javax.annotation.Nullable;
+import java.io.IOException;
+import java.io.StringReader;
+import java.time.Instant;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.github.rholder.retry.Retryer;
@@ -60,19 +73,6 @@ import org.apache.iceberg.exceptions.NoSuchTableException;
 import org.apache.iceberg.exceptions.NotFoundException;
 import org.apache.iceberg.expressions.Expression;
 import org.apache.iceberg.types.Types;
-
-import javax.annotation.Nullable;
-import java.io.IOException;
-import java.io.StringReader;
-import java.time.Instant;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 /**
  * Iceberg table handler which interacts with iceberg library
@@ -173,7 +173,7 @@ public class IcebergTableHandler {
               .collect(Collectors.toList());
 
         if (sort != null) {
-            if (sort.hasSort() && sort.getSortBy().equalsIgnoreCase(DirectSqlGetPartition.FIELD_DATE_CREATED)) {
+            if (sort.hasSort() && DirectSqlGetPartition.FIELD_DATE_CREATED.equalsIgnoreCase(sort.getSortBy())) {
                 final Comparator<PartitionInfo> dateCreatedComparator = Comparator.comparing(
                     p -> p.getAudit() != null ? p.getAudit().getCreatedDate() : null,
                     Comparator.nullsLast(Date::compareTo));
@@ -421,7 +421,7 @@ public class IcebergTableHandler {
     }
 
     private Date fromEpochMilliToDate(@Nullable final Long l) {
-        return (l == null) ? null : Date.from(Instant.ofEpochMilli(l));
+        return l == null ? null : Date.from(Instant.ofEpochMilli(l));
     }
 
     //iceberg://<db-name.table-name>/<partition>/snapshot_time=<dateCreated>
@@ -435,7 +435,7 @@ public class IcebergTableHandler {
             databaseName,
             tableName,
             partitionName,
-            (dataTimestampMillis == null) ? partitionName.hashCode()
+            dataTimestampMillis == null ? partitionName.hashCode()
                 : Instant.ofEpochMilli(dataTimestampMillis).getEpochSecond());
     }
 }

@@ -16,6 +16,9 @@
 
 package com.netflix.metacat.connector.druid;
 
+import javax.annotation.Nullable;
+import java.util.List;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
@@ -23,9 +26,6 @@ import com.netflix.metacat.common.dto.Sort;
 import com.netflix.metacat.common.server.connectors.ConnectorDatabaseService;
 import com.netflix.metacat.common.server.connectors.ConnectorRequestContext;
 import com.netflix.metacat.common.server.connectors.model.DatabaseInfo;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * Druid Connector DatabaseService.

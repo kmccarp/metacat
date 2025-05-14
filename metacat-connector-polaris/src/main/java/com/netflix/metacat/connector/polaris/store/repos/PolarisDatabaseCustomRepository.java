@@ -1,8 +1,8 @@
 package com.netflix.metacat.connector.polaris.store.repos;
 
-import com.netflix.metacat.common.dto.Sort;
-
 import java.util.List;
+
+import com.netflix.metacat.common.dto.Sort;
 
 /**
  * Custom JPA repository implementation for storing PolarisDatabaseEntity.

@@ -17,6 +17,9 @@
  */
 package com.netflix.metacat.common.server.events;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.TableDto;
@@ -24,9 +27,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.ToString;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * Post create metacat view event.

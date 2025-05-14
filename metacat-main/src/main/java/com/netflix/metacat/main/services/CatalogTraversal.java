@@ -17,6 +17,22 @@
 
 package com.netflix.metacat.main.services;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
 import com.google.common.base.Functions;
 import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
@@ -39,22 +55,6 @@ import lombok.Data;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.Instant;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 /**
  * This class does a refresh of all the metadata entities from original data sources to elastic search.

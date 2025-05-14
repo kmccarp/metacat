@@ -13,6 +13,17 @@
 
 package com.netflix.metacat.metadata.mysql;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.sql.Types;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.base.Joiner;
@@ -43,17 +54,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.SqlParameterValue;
 import org.springframework.transaction.annotation.Transactional;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.sql.Types;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * User metadata service.
@@ -215,7 +215,7 @@ public class MysqlUserMetadataService extends BaseUserMetadataService {
                 Lists.partition(holders, config.getUserMetadataMaxInClauseItems());
             for (List<HasMetadata> hasMetadatas : subLists) {
                 final List<QualifiedName> names = hasMetadatas.stream()
-                    .filter(m -> m instanceof HasDefinitionMetadata)
+                    .filter(HasDefinitionMetadata.class::isInstance)
                     .map(m -> ((HasDefinitionMetadata) m).getDefinitionName())
                     .collect(Collectors.toList());
                 if (!names.isEmpty()) {
@@ -361,20 +361,18 @@ public class MysqlUserMetadataService extends BaseUserMetadataService {
     @Transactional(readOnly = true)
     public Optional<ObjectNode> getDefinitionMetadata(
         @Nonnull final QualifiedName name) {
-        final Optional<ObjectNode> retData = getJsonForKey(
+        return getJsonForKey(
             name.isPartitionDefinition() ? SQL.GET_PARTITION_DEFINITION_METADATA : SQL.GET_DEFINITION_METADATA,
             name.toString());
-        return retData;
     }
 
     @Nonnull
     protected Optional<ObjectNode> getDefinitionMetadataForUpdate(
         @Nonnull final QualifiedName name) {
-        final Optional<ObjectNode> retData = getJsonForKey(
+        return getJsonForKey(
             name.isPartitionDefinition()
                 ? SQL.GET_PARTITION_DEFINITION_METADATA : SQL.GET_DEFINITION_METADATA_FOR_UPDATE,
             name.toString());
-        return retData;
     }
 
     @Override

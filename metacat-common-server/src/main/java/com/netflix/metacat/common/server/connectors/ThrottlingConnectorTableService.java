@@ -1,5 +1,9 @@
 package com.netflix.metacat.common.server.connectors;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Map;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
@@ -13,10 +17,6 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Connector that throttles calls to the connector based on the contextual request name

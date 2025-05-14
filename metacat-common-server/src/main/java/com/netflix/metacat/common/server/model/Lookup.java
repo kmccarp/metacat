@@ -17,10 +17,10 @@
  */
 package com.netflix.metacat.common.server.model;
 
-import lombok.Data;
-
 import java.util.Date;
 import java.util.Set;
+
+import lombok.Data;
 
 /**
  * Lookup.

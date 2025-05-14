@@ -15,10 +15,10 @@
  */
 package com.netflix.metacat.common.type;
 
+import javax.annotation.Nonnull;
+
 import lombok.Getter;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
 
 /**
  * Canonical base type class.

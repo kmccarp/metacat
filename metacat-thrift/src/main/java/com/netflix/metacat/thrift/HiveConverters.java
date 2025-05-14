@@ -16,6 +16,8 @@
  */
 package com.netflix.metacat.thrift;
 
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.DatabaseDto;
 import com.netflix.metacat.common.dto.PartitionDto;
@@ -23,8 +25,6 @@ import com.netflix.metacat.common.dto.TableDto;
 import org.apache.hadoop.hive.metastore.api.Database;
 import org.apache.hadoop.hive.metastore.api.Partition;
 import org.apache.hadoop.hive.metastore.api.Table;
-
-import java.util.List;
 
 /**
  * Hive converter interface.

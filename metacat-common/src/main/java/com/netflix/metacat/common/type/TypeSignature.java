@@ -17,6 +17,12 @@
  */
 package com.netflix.metacat.common.type;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.google.common.collect.ImmutableList;
@@ -24,12 +30,6 @@ import com.google.common.collect.Lists;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Type signature class.

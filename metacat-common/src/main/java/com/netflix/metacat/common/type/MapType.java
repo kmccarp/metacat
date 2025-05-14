@@ -17,12 +17,12 @@
  */
 package com.netflix.metacat.common.type;
 
+import java.util.List;
+
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-
-import java.util.List;
 
 /**
  * Map type class.

@@ -17,6 +17,16 @@
  */
 package com.netflix.metacat.connector.snowflake;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.Pageable;
 import com.netflix.metacat.common.dto.Sort;
@@ -30,17 +40,7 @@ import com.netflix.metacat.connector.jdbc.services.JdbcConnectorUtils;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
 
 /**
  * Snowflake table service implementation.

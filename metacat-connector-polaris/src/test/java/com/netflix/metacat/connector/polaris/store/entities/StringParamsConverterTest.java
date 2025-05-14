@@ -1,17 +1,19 @@
 package com.netflix.metacat.connector.polaris.store.entities;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 class StringParamsConverterTest {
-    private static final Map<String, String> VALID_MAP_PARAM = new HashMap<>() { {
-        put("keyA", "value1");
-        put("keyB", "value2");
-        put("keyC", "value3");
-    } };
+    private static final Map<String, String> VALID_MAP_PARAM;
+    static {
+        VALID_MAP_PARAM = new HashMap<>();
+        VALID_MAP_PARAM.put("keyA", "value1");
+        VALID_MAP_PARAM.put("keyB", "value2");
+        VALID_MAP_PARAM.put("keyC", "value3");
+    }
     private static final String VALID_STRING_PARAM = "{\"keyA\":\"value1\",\"keyB\":\"value2\",\"keyC\":\"value3\"}";
     private static final String NESTED_STRING_PARAM = "{\"keyA\":{\"keyB\":\"value2\"},\"keyC\":\"value3\"}";
 

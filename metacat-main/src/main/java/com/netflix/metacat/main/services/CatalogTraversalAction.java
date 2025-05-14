@@ -16,12 +16,12 @@
 
 package com.netflix.metacat.main.services;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.netflix.metacat.common.dto.CatalogDto;
 import com.netflix.metacat.common.dto.DatabaseDto;
 import com.netflix.metacat.common.dto.TableDto;
-
-import java.util.List;
-import java.util.Optional;
 
 /**
  * Action interface that will be called on catalog traversal.

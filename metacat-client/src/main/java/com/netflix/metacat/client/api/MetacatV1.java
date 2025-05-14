@@ -17,16 +17,6 @@
  */
 package com.netflix.metacat.client.api;
 
-import com.netflix.metacat.common.NameDateDto;
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.dto.CatalogDto;
-import com.netflix.metacat.common.dto.CatalogMappingDto;
-import com.netflix.metacat.common.dto.CreateCatalogDto;
-import com.netflix.metacat.common.dto.DatabaseCreateRequestDto;
-import com.netflix.metacat.common.dto.DatabaseDto;
-import com.netflix.metacat.common.dto.TableDto;
-import com.netflix.metacat.common.exception.MetacatNotFoundException;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -40,6 +30,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+
+import com.netflix.metacat.common.NameDateDto;
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.dto.CatalogDto;
+import com.netflix.metacat.common.dto.CatalogMappingDto;
+import com.netflix.metacat.common.dto.CreateCatalogDto;
+import com.netflix.metacat.common.dto.DatabaseCreateRequestDto;
+import com.netflix.metacat.common.dto.DatabaseDto;
+import com.netflix.metacat.common.dto.TableDto;
+import com.netflix.metacat.common.exception.MetacatNotFoundException;
 
 /**
  * Metacat API for managing catalog/database/table/mview.

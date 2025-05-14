@@ -17,6 +17,8 @@
  */
 package com.netflix.metacat.common.dto.notifications.sns.messages;
 
+import javax.annotation.Nullable;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.netflix.metacat.common.dto.TableDto;
@@ -25,8 +27,6 @@ import com.netflix.metacat.common.dto.notifications.sns.payloads.UpdatePayload;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
-import javax.annotation.Nullable;
 
 /**
  * A message sent when a table is renamed.

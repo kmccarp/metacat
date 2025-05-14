@@ -13,14 +13,14 @@
 
 package com.netflix.metacat.connector.s3.model;
 
-import org.joda.time.Instant;
+import java.sql.Timestamp;
+import java.util.Date;
 
+import org.joda.time.Instant;
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
-import java.sql.Timestamp;
-import java.util.Date;
 
 /**
  * {@code BaseEntity} is the entity that all entities.

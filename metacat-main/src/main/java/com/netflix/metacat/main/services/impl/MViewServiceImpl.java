@@ -13,6 +13,13 @@
 
 package com.netflix.metacat.main.services.impl;
 
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
@@ -53,13 +60,6 @@ import com.netflix.metacat.main.services.TableService;
 import com.netflix.metacat.common.server.usermetadata.UserMetadataService;
 import com.netflix.metacat.common.server.util.MetacatContextManager;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * Metacat view service.

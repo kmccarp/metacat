@@ -16,17 +16,17 @@
 
 package com.netflix.metacat.main.services;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.CatalogDto;
 import com.netflix.metacat.common.dto.CatalogMappingDto;
 import com.netflix.metacat.common.dto.DatabaseDto;
 import com.netflix.metacat.common.dto.TableDto;
 import lombok.NonNull;
-
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * Service helper class for catalog traversal.

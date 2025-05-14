@@ -16,9 +16,9 @@
 
 package com.netflix.metacat.common.server.events;
 
-import org.springframework.context.event.ApplicationListenerMethodAdapter;
-
 import java.lang.reflect.Method;
+
+import org.springframework.context.event.ApplicationListenerMethodAdapter;
 
 /**
  * This class has been introduced to get access to the targetClass in ApplicationListenerMethodAdapter.

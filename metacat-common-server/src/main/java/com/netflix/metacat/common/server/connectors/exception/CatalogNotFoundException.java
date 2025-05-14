@@ -17,9 +17,9 @@
  */
 package com.netflix.metacat.common.server.connectors.exception;
 
-import com.netflix.metacat.common.QualifiedName;
-
 import javax.annotation.Nullable;
+
+import com.netflix.metacat.common.QualifiedName;
 
 /**
  * Exception when a catalog is not found.

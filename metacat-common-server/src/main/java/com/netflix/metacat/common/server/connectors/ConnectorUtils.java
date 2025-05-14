@@ -17,16 +17,16 @@
  */
 package com.netflix.metacat.common.server.connectors;
 
-import com.google.common.base.Throwables;
-import com.google.common.collect.ImmutableList;
-import com.netflix.metacat.common.dto.Pageable;
-import com.netflix.metacat.common.dto.Sort;
-
 import javax.annotation.Nullable;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import com.google.common.base.Throwables;
+import com.google.common.collect.ImmutableList;
+import com.netflix.metacat.common.dto.Pageable;
+import com.netflix.metacat.common.dto.Sort;
 
 /**
  * Utility methods shared by all Connectors.

@@ -16,14 +16,14 @@
 
 package com.netflix.metacat.connector.hive.util;
 
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
+
 import com.netflix.metacat.connector.hive.monitoring.HiveMetrics;
 import com.netflix.spectator.api.Registry;
 import com.netflix.spectator.api.Timer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
 
 
 /**

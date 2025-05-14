@@ -17,6 +17,12 @@
 
 package com.netflix.metacat.main.services.search;
 
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.MetacatRequestContext;
 import com.netflix.metacat.common.QualifiedName;
@@ -35,12 +41,6 @@ import com.netflix.metacat.main.services.TableService;
 import com.netflix.spectator.api.Registry;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nonnull;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * This class does a refresh of all the metadata entities from original data sources to elastic search.

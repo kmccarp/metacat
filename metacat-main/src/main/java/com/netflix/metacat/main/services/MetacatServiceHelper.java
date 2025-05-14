@@ -15,6 +15,8 @@
  */
 package com.netflix.metacat.main.services;
 
+import java.util.List;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.MetacatRequestContext;
@@ -41,8 +43,6 @@ import com.netflix.metacat.common.server.events.MetacatUpdateMViewPostEvent;
 import com.netflix.metacat.common.server.events.MetacatUpdateMViewPreEvent;
 import com.netflix.metacat.common.server.events.MetacatUpdateTablePostEvent;
 import com.netflix.metacat.common.server.events.MetacatUpdateTablePreEvent;
-
-import java.util.List;
 
 /**
  * Generic Service helper.

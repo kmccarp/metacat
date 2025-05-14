@@ -17,6 +17,11 @@
  */
 package com.netflix.metacat.main.services.notifications.sns;
 
+import javax.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import com.google.common.base.Throwables;
 import com.netflix.metacat.common.QualifiedName;
 import com.netflix.metacat.common.dto.notifications.sns.SNSMessage;
@@ -26,11 +31,6 @@ import com.netflix.spectator.api.Registry;
 import com.netflix.spectator.api.Timer;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 /**
  * SNS Notification Metric.

@@ -17,10 +17,6 @@
  */
 package com.netflix.metacat.client.api;
 
-import com.netflix.metacat.common.QualifiedName;
-import com.netflix.metacat.common.dto.TagCreateRequestDto;
-import com.netflix.metacat.common.dto.TagRemoveRequestDto;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
@@ -33,6 +29,10 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 import java.util.Set;
+
+import com.netflix.metacat.common.QualifiedName;
+import com.netflix.metacat.common.dto.TagCreateRequestDto;
+import com.netflix.metacat.common.dto.TagRemoveRequestDto;
 
 /**
  * APIs to manipulate the tags.

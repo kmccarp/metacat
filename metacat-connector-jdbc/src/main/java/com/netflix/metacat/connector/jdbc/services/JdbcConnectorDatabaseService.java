@@ -17,6 +17,17 @@
  */
 package com.netflix.metacat.connector.jdbc.services;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Locale;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.netflix.metacat.common.QualifiedName;
@@ -30,18 +41,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import jakarta.inject.Inject;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
 
 /**
  * Generic JDBC implementation of the ConnectorDatabaseService.
@@ -162,7 +162,7 @@ public class JdbcConnectorDatabaseService implements ConnectorDatabaseService {
                 while (schemas.next()) {
                     final String schemaName = schemas.getString("TABLE_SCHEM").toLowerCase(Locale.ENGLISH);
                     // skip internal schemas
-                    if (!schemaName.equals("information_schema")) {
+                    if (!"information_schema".equals(schemaName)) {
                         names.add(QualifiedName.ofDatabase(name.getCatalogName(), schemaName));
                     }
                 }
